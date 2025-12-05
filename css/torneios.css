@@ -1,0 +1,363 @@
+
+/* ---------- ÁREA DE EVENTOS ---------- */
+#cont_torneios {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 5% 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    box-sizing: border-box;
+}
+
+.mes_eventos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.titulo_mes {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: rgb(31, 84, 124);
+    border-left: 6px solid rgb(31, 84, 124);
+    padding-left: 12px;
+    margin-bottom: 0.5rem;
+}
+
+/* ====== BOTÕES DE FILTRO ====== */
+.filtros-eventos {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 40px 0;
+}
+
+.filtro {
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.filtro:hover {
+    background: #f5f7fa;
+}
+
+.filtro.ativo {
+    background: rgb(31, 84, 124);
+    color: #fff;
+    border-color: rgb(31, 84, 124);
+}
+
+
+/* ====== GRID ====== */
+.grid_eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* ====== CARD ====== */
+.card_evento2 {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+
+    /* removido o width fixo que distorcia o layout */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.25s;
+}
+
+.card_evento2:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ====== IMAGEM ====== */
+.card_img {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Categoria no topo direito */
+.categoria {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgb(255, 255, 255);
+    color: rgb(31, 84, 124);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* ====== CONTEÚDO DO CARD ====== */
+.card_info {
+    padding: 20px;
+}
+
+.titulo_evento {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.linha_info {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* ====== BOTÃO DO CARD ====== */
+.btn_evento {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: rgb(31, 84, 124);
+    color: white;
+    padding: 12px 0;
+    border-radius: 10px;
+    margin-top: 18px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn_evento:hover {
+    background: rgb(15, 63, 100);
+}
+
+
+/* ---------- IMAGENS DE TORNEIOS ---------- */
+.imgs_torneios {
+    width: 40vw;
+    height: 40vw;
+    border: 1px solid rgb(143, 143, 143);
+    margin-bottom: 10%;
+}
+
+#img_1, #img_2, #img_3 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#img_1 { background-image: url(../img/img_volei.jpg); }
+#img_2 { background-image: url(../img/img_volei.jpg); }
+#img_3 { background-image: url(../img/img_volei.jpg); }
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Mobile */
+@media (max-width: 799px) {
+    .titulo_mes { font-size: 1.4rem; text-align: left; }
+    .mes_eventos {margin-top: -5vh;}
+    .info_evento { font-size: 1.3rem; padding: 10px; margin-right: 15%;}
+    .grid_eventos {
+        grid-template-columns: 110%;
+        justify-content: center;    
+    }
+    #cont_torneios{margin-top: 5vh;}
+}
+
+/* Desktop */
+/* Desktop */
+@media (min-width: 800px) {
+    #cont_torneios { padding: 5% 12%; }
+    .titulo_mes { font-size: 1.8rem; }
+    .grid_eventos { gap: 2rem; }
+    /* ---------- ÁREA DE EVENTOS ---------- */
+#cont_torneios {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 5% 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    box-sizing: border-box;
+}
+
+.mes_eventos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 12%;
+    gap: 2rem;
+}
+
+.titulo_mes {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: rgb(31, 84, 124);
+    border-left: 6px solid rgb(31, 84, 124);
+    padding-left: 12px;
+    margin-bottom: 0.5rem;
+    margin-left: 12%;
+}
+
+/* ====== BOTÕES DE FILTRO ====== */
+.filtros-eventos {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 40px 0;
+}
+
+.filtro {
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.filtro:hover {
+    background: #f5f7fa;
+}
+
+.filtro.ativo {
+    background: rgb(31, 84, 124);
+    color: #fff;
+    border-color: rgb(31, 84, 124);
+}
+
+
+/* ====== GRID ====== */
+.grid_eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    row-gap: 500px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* ====== CARD ====== */
+.card_evento2 {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.25s;
+}
+
+
+.card_evento2:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ====== IMAGEM ====== */
+.card_img {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+}
+
+.card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Categoria no topo direito */
+.categoria {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgb(255, 255, 255);
+    color: rgb(31, 84, 124);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* ====== CONTEÚDO DO CARD ====== */
+.card_info {
+    padding: 20px;
+}
+
+.titulo_evento {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.linha_info {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    margin-left: -7%;
+    gap: 8px;
+}
+
+
+/* ====== BOTÃO DO CARD ====== */
+.btn_evento {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: rgb(31, 84, 124);
+    color: white;
+    padding: 12px 0;
+    border-radius: 10px;
+    margin-top: 18px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn_evento:hover {
+    background: rgb(15, 63, 100);
+}
+
+
+/* ---------- IMAGENS DE TORNEIOS ---------- */
+.imgs_torneios {
+    width: 40vw;
+    height: 40vw;
+    border: 1px solid rgb(143, 143, 143);
+    margin-bottom: 10%;
+}
+
+#img_1, #img_2, #img_3 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#img_1 { background-image: url(../img/img_volei.jpg); }
+#img_2 { background-image: url(../img/img_volei.jpg); }
+#img_3 { background-image: url(../img/img_volei.jpg); }
+
+}
+

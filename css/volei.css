@@ -1,0 +1,194 @@
+
+
+#escolas
+{
+    margin-top: 0vh;
+    margin-bottom: 4%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+#item_1
+{
+    background-image: url(../img/SUPREMO\ VÔLEI.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#item_2
+{
+    background-image: url(../img/KALIL\ VOLEI.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#item_3
+{
+    background-image: url(../img/CONSTRUIR\ VÔLEI.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#item_4
+{
+    background-image: url(../img/CRESCER\ ESPORTES.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#info_escola {
+    width: 31%;
+    padding: 10px;
+    margin-left: 17%;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(31, 84, 124); 
+}
+.info-texto div {
+    text-align: justify;
+    text-indent: 0px !important;
+}
+
+.info-texto h2 {
+    text-align: left;
+}
+
+/* ---- itens das escolas ---- */
+.iten_escola {
+    width: 11vw;
+    height: 10vh;
+    text-align: center;
+    padding: 40px;
+    margin: 0.9%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.iten_escola:hover {
+    transform: scale(1.05);
+}
+/* ---------- INFO + IMAGEM ---------- */
+.info-conteudo {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    width: 70vw;
+    margin-left: -55%;
+    /* estado inicial da animação */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+p {
+    color: rgb(31, 84, 124) !important;
+    font-weight: normal !important;
+}
+
+/* quando ativar a animação */
+.info-conteudo.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info-conteudo div { 
+    width: 80vw;
+    height: 55vh; 
+}
+
+.info-imagem { 
+    border: 2px solid rgb(31, 84, 124);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+@media (max-width: 768px) {
+    html, body { overflow-x: hidden; }
+
+    #escolas {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 5vh;
+    }
+
+    .iten_escola {
+        width: 85vw;
+        height: 24vh;
+        margin: 10px auto;
+        padding: 0;
+    }
+
+    #info_escola {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 0.9rem;
+    }
+
+    .info-conteudo {
+        flex-direction: column;
+        gap: 15px;
+        width: 94%;
+        margin: 0;
+    }
+
+    .info-conteudo > div {
+        width: 100%;
+        height: auto; /* Altura adaptável no mobile */
+    }
+
+.info-imagem {
+    border: 2px solid rgb(31, 84, 124);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;       /* cover mantém enquadramento visual */
+    width: 100%;
+    /* garante altura visível mesmo que o pai não defina altura */
+    min-height: 200px;
+    margin-left: 4%;
+    /* alternativa moderna que preserva proporção */
+    aspect-ratio: 4 / 3;
+    display: block;
+    box-sizing: border-box;
+    background-color: #eef6fb;    /* cor suave enquanto imagem não carrega */
+    overflow: hidden;
+}
+
+    .info-texto { text-align: justify; }
+}
+
+/* Telas estreitas e altas (S8+) */
+@media screen and (max-width: 420px) and (min-height: 740px) {
+    .iten_escola { height: 24vh; }
+.info-imagem {
+    border: 2px solid rgb(31, 84, 124);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;       /* cover mantém enquadramento visual */
+    width: 100%;
+    /* garante altura visível mesmo que o pai não defina altura */
+    min-height: 200px;
+    margin-left: 4%;
+    /* alternativa moderna que preserva proporção */
+    aspect-ratio: 4 / 3;
+    display: block;
+    box-sizing: border-box;
+    background-color: #eef6fb;    /* cor suave enquanto imagem não carrega */
+    overflow: hidden;
+}
+    .info-conteudo > div { height: auto !important; }
+}
+
+footer {
+    margin-top: 8.2%;
+}

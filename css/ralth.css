@@ -1,0 +1,372 @@
+/* ============================================================
+   IMAGENS DOS ITENS
+   ============================================================ */
+#item_1 {
+    background-image: url(../img/img_futsal.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#item_2 {
+    background-image: url(../img/img_volei.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#item_3 {
+    background-image: url(../img/img_lanchonete.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ============================================================
+   CORES GERAIS
+   ============================================================ */
+.infs-gerais p,
+.infs-gerais h2,
+.infs-gerais a {
+    color: rgb(31, 84, 124) !important;
+}
+
+hr {
+    border: solid 0.1px rgb(31, 84, 124);
+}
+
+/* ============================================================
+   ÍTENS (CARDS DAS ESCOLAS)
+   ============================================================ */
+#items_ralth {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.item-ralth {
+    width: 12vw;
+    height: 22vh;
+    text-align: center;
+    padding: 40px;
+    margin: 2%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.item-ralth:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   BLOCO PRINCIPAL DE INFORMAÇÕES
+   ============================================================ */
+.info-escola {
+    width: 100%;
+    margin-top: 25px;
+    display: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* container geral */
+.info-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: .6s ease;
+}
+
+.info-conteudo.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   INFO EM 2 COLUNAS (OPÇÃO 1)
+   ============================================================ */
+.info-texto {
+    flex: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    color: rgb(31, 84, 124);
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* DUAS COLUNAS */
+    gap: 25px;
+    text-align: left;
+}
+
+/* título ocupa as 2 colunas */
+.info-texto .titulo,
+.info-texto h2 {
+    grid-column: span 2;
+    text-align: center;
+    color: rgb(31, 84, 124);
+    font-size: 2.3rem;
+}
+
+/* subtítulos */
+.info-texto h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+/* textos */
+.info-texto p {
+    color: rgb(31, 84, 124) !important;
+    font-size: 1.05rem;
+    font-weight: normal !important;
+}
+
+/* listas sem bolinhas */
+.info-texto ul {
+    padding-left: 0;
+}
+
+/* ============================================================
+   IMAGEM AO LADO
+   ============================================================ */
+.info-imagem {
+    width: 22vw;
+    height: 30vh;
+    border: 2px solid rgb(31, 84, 124);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.info-imagem-ralth {
+    width: 38vw;
+    height: 38vh;
+    border: 2px solid rgb(31, 84, 124);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ============================================================
+   Desktop
+   ============================================================ */
+@media (max-width: 1068px) {
+
+
+    .info-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-texto {
+        width: 100%;
+        grid-template-columns: 1fr; /* vira 1 coluna */
+        text-align: left;
+    }
+
+    .info-texto .titulo,
+    .info-texto h2 {
+        grid-column: span 1; /* ajusta p/ 1 coluna */
+        text-align: center;
+    }
+
+    .info-imagem {
+        width: 90%;
+        height: 220px;
+        margin: 10px auto;
+    }
+
+    #items_ralth {
+        gap: 12px;
+    }
+
+    .item-ralth {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+footer {
+    margin-top: 6.2%;
+}
+/* ============================================================
+   BLOCOS DE SUBTÍTULO + CONTEÚDO (GRID 2x2)
+   ============================================================ */
+
+.info-bloco {
+    background: none;
+    max-width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.info-bloco h3 {
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+    color: rgb(31, 84, 124);
+}
+
+.info-bloco p,
+.info-bloco ul {
+    font-size: 1.05rem;
+    color: rgb(31, 84, 124);
+    margin: 0;
+}
+
+.info-bloco ul {
+    padding-left: 0;
+}
+
+#span-negrito {
+    font-weight: bold !important;
+    max-width: 90%;
+
+}
+
+/* Centralizado para Lanchonete */
+.info-conteudo.centralizado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.info-conteudo.centralizado ul {
+    padding: 0;
+    margin: 10px 0;
+}
+
+.info-conteudo.centralizado li {
+    margin: 5px 0;
+    text-align: left;
+    font-size: 1.1rem;
+    color: rgb(31, 84, 124);
+}
+
+.info-conteudo.centralizado p{
+    color: rgb(31, 84, 124);
+}
+
+.textos {
+    margin-left: -3%;
+}
+
+.titulo2 {
+    color: rgb(31, 84, 124);
+    font-size: 2.4em;
+    margin-bottom: -2%;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    
+.item-lista-esquerda {
+
+    color: red;
+
+}
+
+hr {
+    border: solid 0.1px rgb(31, 84, 124);
+}
+
+
+    /* Container de itens */
+    #items_ralth {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 5vh;
+    }
+
+    .item-ralth {
+        width: 75vw;
+        height: 34vh;
+        margin: 10px auto;
+        padding: 0;
+    }
+
+    /* Container geral de informações */
+    #info_escola {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 0.9rem;
+    }
+
+    .infs-gerais {
+        margin-top: 7vh;
+        margin-left: 10%;
+        max-width: 80%;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .info-conteudo {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        margin: 0;
+        text-align: center; /* centraliza a lanchonete e demais itens */
+    }
+
+    /* Todos os filhos diretos de info-conteudo ocupam 100% */
+    .info-conteudo > div {
+        width: 100%;
+    }
+
+    /* Ajusta textos */
+    .info-texto {
+        display: flex; 
+        flex-direction: column;
+        text-align: justify;
+        width: 100%;
+        gap: 10px;
+    }
+
+    /* Ajusta título */
+    .info-texto .titulo,
+    .info-texto h2 {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    /* Ajusta subtítulos e parágrafos */
+    .info-texto h3 {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+
+    .info-texto p,
+    .info-texto ul {
+        font-size: 0.95rem;
+        margin: 2px 0;
+    }
+
+    /* Layout centralizado da lanchonete */
+    .info-conteudo.centralizado {
+        gap: 10px;
+
+    }
+
+    .info-conteudo.centralizado ul {
+        padding: 0;
+        margin: 8px 0;
+    }
+
+    .info-conteudo.centralizado li {
+        font-size: 1.2rem;
+    }
+
+    .info-conteudo.centralizado p {
+        font-size: 1.2rem;
+    }
+}
