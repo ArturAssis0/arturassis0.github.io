@@ -1,0 +1,996 @@
+/* ---------- BASE ---------- */
+html,
+body {
+    overflow-x: hidden;
+    margin: 0vw 0vh;
+    font-family: 'Montserrat';
+    background-color: transparent;
+}
+
+#main_div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#conteudo-geral {
+    text-align: center;
+}
+
+
+#opcoes {
+    margin-bottom: 10%;
+    width: 100%;
+    height: 8vh;
+    max-width: 100vw;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    z-index: 30;
+}
+
+#menu_opcoes {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    width: 32vw;
+    text-align: center;
+    transition: all 0.5s ease-out;
+    box-sizing: border-box;
+    max-height: 0;
+    opacity: 0;
+    margin-top: 5.5%;
+    margin-bottom: 5%;
+    z-index: 25;
+}
+
+#menu_opcoes.mostrar {
+    max-height: 60vh;
+    opacity: 1;
+    padding: 10px;
+    transition: all 0.5s ease-in;
+}
+
+#menu_opcoes a {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: white;
+    padding: 8px;
+    width: 102%;
+    text-align: center;
+    margin: 5px 0;
+    transition: 0.5s;
+}
+
+#menu_opcoes a:hover {
+    background-color: #ddd;
+}
+
+#logo {
+    margin-top: 3%;
+    height: 26vh;
+    background-image: url(img/escudo_ralth_site.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-color: transparent;
+    z-index: 35;
+}
+
+/* ---------- CARROSSEL ---------- */
+.carrossel {
+    width: 100%;
+    max-width: 100vw;
+    height: 34vh;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.item {
+    width: 100%;
+    height: 30vh;
+    flex-shrink: 0;
+    background-position: center;
+}
+
+.img1 {
+    background-image: url(img/carrossel-1.jpeg);
+    background-color: rgb(31, 84, 124);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img2 {
+    background-image: url(img/carrossel-2.jpeg);
+    background-size: cover;
+    background-color: rgb(31, 84, 124);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img3 {
+    background-image: url(img/carrossel-3.jpeg);
+    background-size: cover;
+    background-color: rgb(31, 84, 124);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img4 {
+    background-image: url(img/carrossel-4.jpeg);
+    background-size: cover;
+    background-color: rgb(31, 84, 124);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img5 {
+    background-image: url(img/carrossel-5.jpeg);
+    background-size: cover;
+    background-color: rgb(31, 84, 124);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img6 {
+    background-image: url(img/carrossel-6.jpeg);
+    background-size: cover;
+    background-color: rgb(31, 84, 124);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img7 {
+    background-image: url(img/carrossel-7.jpeg);
+    background-size: cover;
+    background-color: rgb(31, 84, 124);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img8 {
+    background-image: url(img/carrossel-8.jpeg);
+    background-size: cover;
+    background-color: rgb(31, 84, 124);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img9 {
+    background-image: url(img/carrossel-9.jpeg);
+    background-size: cover;
+    background-color: rgb(31, 84, 124);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img10 {
+    background-image: url(img/carrossel-10.jpeg);
+    background-size: cover;
+    background-color: rgb(31, 84, 124);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.anterior,
+.proximo {
+    color: white;
+}
+
+/* ---------- CONTEÚDO ---------- */
+#conteudo {
+    width: 80%;
+    border-radius: 6px;
+    padding: 18px;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+/* ---------- ÍCONES SOCIAIS ---------- */
+#yout {
+    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg');
+}
+
+#wzp {
+    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg');
+}
+
+#insta {
+    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+}
+
+#face {
+    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
+}
+
+#yout,
+#wzp,
+#insta,
+#face {
+    filter: invert(1) brightness(2);
+}
+
+#yout:hover,
+#wzp:hover,
+#insta:hover,
+#face:hover {
+    transform: scale(1.1);
+    background-color: #3b1c1c0e;
+    border-color: #00000060;
+}
+
+/* ---------- LINKS E TEXTOS ---------- */
+.link_rs {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.opc_menu {
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+    padding: 10px;
+    width: 95vw;
+}
+
+.opc {
+    background-color: white;
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+}
+
+h5 {
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgb(31, 84, 124);
+    text-align: center;
+}
+
+/* ---------------------------------------------------- */
+/* === ESTILOS DO RODAPÉ (VERSÃO DESKTOP PADRÃO) === */
+/* ---------------------------------------------------- */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: space-around;
+    padding: 40px 20px;
+    color: #f5f5f5;
+    font-family: "Montserrat", sans-serif;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-text {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.footer-col {
+    min-width: 250px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* === ÍCONES DE CONTATO === */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.contato-icone {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.contato-icone i {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.contato-icone:hover {
+    transform: scale(1.1);
+}
+
+/* === REDES SOCIAIS === */
+.footer-socials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+    justify-items: center;
+}
+
+.icone-social {
+    width: 55px;
+    height: 55px;
+    background-color: #46414115;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid #9b9b9b25;
+    transition: all 0.3s ease;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ---------------------------------------------------- */
+/* ---------- DESKTOP (>=900px) ---------- */
+/* ---------------------------------------------------- */
+@media (min-width: 800px) {
+
+    #conteudo-geral {
+        width: 110%;
+        padding: 5%;
+        margin-top: 6vh;
+        border-radius: 5px;
+    }
+
+    .conteudo-saudacao {
+        margin-top: -11vh;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.6) 100%) rgb(31, 84, 124);
+    }
+
+    .conteudo-saudacao h1 {
+        font-size: 3rem;
+    }
+
+    .conteudo-saudacao p {
+        margin-top: -2vh;
+        font-size: 1.5rem;
+    }
+
+    #opcoes {
+        margin-top: 0vh;
+        margin-bottom: 2%;
+        height: 28vh;
+        background: linear-gradient(to right, rgb(9, 39, 61), rgb(31, 84, 124));
+        background-color: rgb(31, 84, 124);
+        box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 50;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #meio_topo {
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        /* corrigido */
+        justify-content: space-between;
+        /* corrigido */
+        align-items: center;
+        width: 100%;
+        height: 17vh;
+        padding: 0 10px;
+        /* corrigido */
+    }
+
+    #menu_opcoes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+        width: 100%;
+        max-height: none;
+        z-index: 45;
+        height: 16vh;
+        opacity: 1;
+        margin-top: 10vh;
+    }
+
+    #menu_opcoes a {
+        font-size: 25px;
+        font-weight: bold;
+        background-color: transparent;
+        padding: 10px 15px;
+        width: auto;
+        text-align: center;
+        margin: 2% 5px;
+        color: white;
+        transition: 0.3s;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    #menu_opcoes a:hover {
+        background-color: rgb(255, 255, 255);
+        border-radius: 8px;
+        color: rgb(31, 84, 124);
+    }
+
+    #logo {
+        margin: 0;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        height: 20vh;
+        background-size: contain;
+        z-index: 35;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .carrossel {
+        height: 75vh;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        border-radius: 10px;
+        box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.2);
+        margin-top: -22vh;
+        margin-bottom: 10vh;
+    }
+
+    .item {
+        height: 60vh;
+    }
+
+    #conteudo {
+        width: 55%;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 2% auto;
+    }
+
+    #conteudo h5 {
+        font-size: 34px;
+    }
+
+    #conteudo p {
+        color: rgb(31, 84, 124);
+        margin-left: 10%;
+        text-align: justify;
+        width: 80%;
+        font-size: 22px;
+    }
+
+    #conteudo h1 {
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    p {
+        font-weight: bolder;
+        text-indent: 30px;
+        text-align: justify;
+        color: rgb(255, 255, 255);
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    h5 {
+        font-weight: bolder;
+        font-size: 18px;
+        color: rgb(31, 84, 124);
+        text-align: center;
+    }
+
+    h1 {
+        color: rgb(255, 255, 255);
+        margin-bottom: 30px;
+    }
+
+    /* ===== Bloco valores (ícones circulares + título) ===== */
+    :root {
+        --cor-primaria: rgb(31, 84, 124);
+        /* cor do texto (ajuste conforme fundo) */
+        --sombra: 0 6px 14px rgba(0, 0, 0, 0.15);
+        --icone: rgb(255, 255, 255);
+    }
+
+    .titulo-valores {
+        color: var(--cor-primaria);
+        font-size: 30px;
+    }
+
+    /* Container geral */
+    .valores {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        /* centro por padrão */
+        align-items: flex-start;
+        padding: 18px 10px;
+        margin: 16px 0;
+        color: var(--texto);
+    }
+
+    /* Cada item */
+    .valor {
+        width: 120px;
+        min-width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+
+    /* Círculo que contém o SVG */
+    .icone {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: var(--cor-primaria);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: var(--sombra);
+        transition: transform .12s ease, box-shadow .18s ease;
+    }
+
+    /* SVG adaptável - usa currentColor para preencher */
+    .icone svg {
+        width: 36px;
+        height: 36px;
+        display: block;
+        fill: var(--icone);
+        /* cor do desenho dentro do círculo */
+    }
+
+    /* Título (texto embaixo) */
+    .valor .titulo {
+        font-size: 0.86rem;
+        font-weight: 700;
+        letter-spacing: .4px;
+        color: var(--cor-primaria);
+        padding: 0 4px;
+    }
+
+    /* Hover: sobe ligeiro e muda sombra */
+    .valor:hover .icone {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+    }
+
+
+}
+
+/* ---------------------------------------------------- */
+/* ---------- DESKTOP INTERMEDIÁRIO (>=800px) ---------- */
+/* ---------------------------------------------------- */
+@media (min-width: 800px) {
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.9) 100%) rgb(31, 84, 124);
+        color: #f5f5f5;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .footer-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .footer-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-text {
+        font-size: 1rem;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .footer-col {
+        min-width: 250px;
+    }
+
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .contato-icone {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .contato-icone i {
+        color: #fff;
+        font-size: 1.3rem;
+    }
+
+    .contato-icone:hover {
+        transform: scale(1.1);
+    }
+
+    .footer-socials {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 10px;
+        justify-items: center;
+    }
+
+    .icone-social {
+        width: 55px;
+        height: 55px;
+        background-color: #46414115;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1.5px solid #9b9b9b25;
+        transition: all 0.3s ease;
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #yout {
+        background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg');
+    }
+
+    #wzp {
+        background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg');
+    }
+
+    #insta {
+        background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
+    }
+
+    #face {
+        background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
+    }
+
+    #yout,
+    #wzp,
+    #insta,
+    #face {
+        filter: invert(1) brightness(2);
+    }
+
+    #yout:hover,
+    #wzp:hover,
+    #insta:hover,
+    #face:hover {
+        transform: scale(1.1);
+        background-color: #bdbaba15;
+        border-color: #1615156b;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* ---------- MOBILE (<=799px) ---------- */
+/* ---------------------------------------------------- */
+@media (max-width: 799px) {
+
+    .imgs-swiper {
+        background-color: rgb(31, 84, 124);
+        background-size: contain !important;
+        background-repeat: no-repeat;
+        height: 35vh;
+        background-position: center;
+    }
+
+    .img1 {
+        background-image: url(img/carrossel-1.jpeg);
+
+    }
+
+    .img2 {
+        background-image: url(img/carrossel-2.jpeg);
+    }
+
+    .img3 {
+        background-image: url(img/carrossel-3.jpeg);
+    }
+
+    .img4 {
+        background-image: url(img/carrossel-4.jpeg);
+    }
+
+    .img5 {
+        background-image: url(img/carrossel-5.jpeg);
+    }
+
+    .img6 {
+        background-image: url(img/carrossel-6.jpeg);
+    }
+
+    .img7 {
+        background-image: url(img/carrossel-7.jpeg);
+    }
+
+    .img8 {
+        background-image: url(img/carrossel-8.jpeg);
+
+    }
+
+    .img9 {
+        background-image: url(img/carrossel-9.jpeg);
+    }
+
+    .img10 {
+        background-image: url(img/carrossel-10.jpeg);
+    }
+
+    #meio_topo {
+        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.6) 100%) rgb(31, 84, 124);
+        display: flex;
+        flex-direction: row;
+        /* corrigido */
+        justify-content: space-between;
+        /* corrigido */
+        align-items: center;
+        width: 100%;
+        height: 17vh;
+        padding: 0 10px;
+        /* corrigido */
+    }
+
+    #menu_opcoes {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(15, 63, 100);
+        padding: 10px;
+        position: absolute;
+        top: 14vh;
+        right: 0;
+        width: 100vw;
+        text-align: center;
+        transition: all 0.5s ease-out;
+        box-sizing: border-box;
+        max-height: 0;
+        opacity: 0;
+        margin-top: 5.5%;
+        margin-bottom: 5%;
+        z-index: 25;
+    }
+
+    #menu_opcoes a {
+        display: inline-block;
+        background-color: rgb(15, 63, 100);
+        color: white;
+        border-bottom: solid white;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        width: 35%;
+    }
+
+
+    #menu {
+        background-image: url(img/img_menu.png);
+        background-size: 35%;
+        margin-left: 9%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    #logo {
+        margin-left: 36.5%;
+        background-size: 100%;
+    }
+
+    #rodape {
+        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.6) 100%) rgb(31, 84, 124);
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 15px;
+        gap: 30px;
+    }
+
+    .footer-col {
+        min-width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .footer-title,
+    .footer-subtitle {
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+
+    .footer-contact {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-item {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .footer-socials {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto 0;
+    }
+
+    .icone-social {
+        width: 45px;
+        height: 45px;
+        background-size: 50%;
+    }
+
+    #conteudo p {
+        color: rgb(31, 84, 124);
+        text-align: justify;
+    }
+
+    #conteudo h5 {
+        font-size: 28px;
+    }
+
+    .conteudo-saudacao {
+        margin-bottom: -5vh;
+        margin-top: -0.2vh;
+        height: 18vh;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.6) 100%) rgb(31, 84, 124);
+    }
+
+    .conteudo-saudacao h1 {
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .conteudo-saudacao p {
+        font-size: 0.9rem;
+        color: white;
+    }
+
+
+    /* ===== Bloco valores (ícones circulares + título) ===== */
+    :root {
+        --cor-primaria: rgb(31, 84, 124);
+        /* cor do texto (ajuste conforme fundo) */
+        --sombra: 0 6px 14px rgba(0, 0, 0, 0.15);
+        --icone: rgb(255, 255, 255);
+    }
+
+    /* Container geral */
+    .valores {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        /* centro por padrão */
+        align-items: flex-start;
+        width: 100vw;
+        padding: 18px 10px;
+        margin: 16px 0;
+        color: var(--texto);
+    }
+
+    /* Cada item */
+    .valor {
+        width: 120px;
+        min-width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+
+    /* Círculo que contém o SVG */
+    .icone {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: var(--cor-primaria);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: var(--sombra);
+        transition: transform .12s ease, box-shadow .18s ease;
+    }
+
+    /* SVG adaptável - usa currentColor para preencher */
+    .icone svg {
+        width: 36px;
+        height: 36px;
+        display: block;
+        fill: var(--icone);
+        /* cor do desenho dentro do círculo */
+    }
+
+    /* Título (texto embaixo) */
+    .valor .titulo {
+        font-size: 0.86rem;
+        font-weight: 700;
+        letter-spacing: .4px;
+        color: var(--cor-primaria);
+        padding: 0 4px;
+    }
+
+    /* Hover: sobe ligeiro e muda sombra */
+    .valor:hover .icone {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+    }
+
+
+}
