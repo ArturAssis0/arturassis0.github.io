@@ -1,37 +1,105 @@
-/* ---------- BASE ---------- */
+/* ============================================================
+   VARIÁVEIS GLOBAIS
+   ============================================================ */
+:root {
+    --cor-primaria: rgb(31, 84, 124);
+    --cor-primaria-escura: rgb(9, 39, 61);
+    --cor-primaria-hover: rgb(15, 63, 100);
+    --cor-branca: #ffffff;
+    --sombra: 0 6px 14px rgba(0, 0, 0, 0.15);
+    --icone-cor: rgb(255, 255, 255);
+    --font-base: 'Montserrat', sans-serif;
+    --gradiente-header: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.6) 100%) rgb(31, 84, 124);
+}
+
+/* ============================================================
+   RESET BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
     overflow-x: hidden;
-    margin: 0vw 0vh;
-    font-family: 'Montserrat';
+    margin: 0;
+    width: 100vw;
+    padding: 0;
+    font-family: var(--font-base);
     background-color: transparent;
 }
 
+/* ============================================================
+   LAYOUT PRINCIPAL
+   ============================================================ */
 #main_div {
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: transparent;
 }
 
 #conteudo-geral {
+    width: 100%;
     text-align: center;
 }
 
-
+/* ============================================================
+   HEADER / NAVEGAÇÃO
+   ============================================================ */
 #opcoes {
-    margin-bottom: 10%;
     width: 100%;
-    height: 8vh;
-    max-width: 100vw;
-    text-align: center;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
     z-index: 30;
+}
+
+/* --- BARRA TOPO (logo + ícone menu) --- */
+#meio_topo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    background: var(--gradiente-header);
+    height: 17vh;
+}
+
+/* --- LOGO --- */
+#logo {
+    height: 26vw;          /* usa vw para escalar proporcional à tela */
+    max-height: 140px;
+    background-image: url(img/escudo_ralth_site.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    z-index: 35;
+    margin-left: 31%;      /* centraliza no mobile */
+    flex: 1;
+}
+
+/* --- BOTÃO HAMBURGUER --- */
+#menu {
+    background-image: url(img/img_menu.png);
+    background-size: 35%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    width: 25%;
+    height: 100%;
+}
+
+/* --- MENU DROPDOWN --- */
+.opc {
+    background-color: var(--cor-branca);
+    width: 25%;
+    height: 100%;
+    padding: 10px;
 }
 
 #menu_opcoes {
@@ -40,239 +108,238 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: var(--cor-primaria-hover);
     padding: 10px;
-    width: 32vw;
+    position: absolute;
+    top: 17vh;
+    right: 0;
+    width: 100vw;
     text-align: center;
-    transition: all 0.5s ease-out;
-    box-sizing: border-box;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     max-height: 0;
     opacity: 0;
-    margin-top: 5.5%;
-    margin-bottom: 5%;
     z-index: 25;
 }
 
 #menu_opcoes.mostrar {
     max-height: 60vh;
     opacity: 1;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
     padding: 10px;
-    transition: all 0.5s ease-in;
 }
 
 #menu_opcoes a {
+    display: inline-block;
     font-size: 14px;
     font-weight: bold;
-    background-color: white;
+    background-color: var(--cor-primaria-hover);
+    color: var(--cor-branca);
+    border-bottom: solid var(--cor-branca);
+    border-radius: 3px;
     padding: 8px;
-    width: 102%;
+    width: 35%;
     text-align: center;
     margin: 5px 0;
-    transition: 0.5s;
+    transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 #menu_opcoes a:hover {
-    background-color: #ddd;
+    background-color: var(--cor-primaria);
 }
 
-#logo {
-    margin-top: 3%;
-    height: 26vh;
-    background-image: url(img/escudo_ralth_site.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 90%;
-    background-color: transparent;
-    z-index: 35;
-}
-
-/* ---------- CARROSSEL ---------- */
+/* ============================================================
+   CARROSSEL
+   ============================================================ */
 .carrossel {
     width: 100%;
     max-width: 100vw;
-    height: 34vh;
+    height: 35vh;
     margin: auto;
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
 
-.item {
-    width: 100%;
-    height: 30vh;
-    flex-shrink: 0;
-    background-position: center;
-}
-
-.img1 {
-    background-image: url(img/carrossel-1.jpeg);
-    background-color: rgb(31, 84, 124);
+.imgs-swiper {
+    background-color: var(--cor-primaria);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100%;
 }
 
-.img2 {
-    background-image: url(img/carrossel-2.jpeg);
-    background-size: cover;
-    background-color: rgb(31, 84, 124);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.img3 {
-    background-image: url(img/carrossel-3.jpeg);
-    background-size: cover;
-    background-color: rgb(31, 84, 124);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.img4 {
-    background-image: url(img/carrossel-4.jpeg);
-    background-size: cover;
-    background-color: rgb(31, 84, 124);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.img5 {
-    background-image: url(img/carrossel-5.jpeg);
-    background-size: cover;
-    background-color: rgb(31, 84, 124);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.img6 {
-    background-image: url(img/carrossel-6.jpeg);
-    background-size: cover;
-    background-color: rgb(31, 84, 124);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.img7 {
-    background-image: url(img/carrossel-7.jpeg);
-    background-size: cover;
-    background-color: rgb(31, 84, 124);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.img8 {
-    background-image: url(img/carrossel-8.jpeg);
-    background-size: cover;
-    background-color: rgb(31, 84, 124);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.img9 {
-    background-image: url(img/carrossel-9.jpeg);
-    background-size: cover;
-    background-color: rgb(31, 84, 124);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.img10 {
-    background-image: url(img/carrossel-10.jpeg);
-    background-size: cover;
-    background-color: rgb(31, 84, 124);
-    background-repeat: no-repeat;
-    background-position: center;
-}
+/* Imagens do carrossel — mobile usa contain */
+.img1  { background-image: url(img/carrossel-1.jpeg);  background-size: contain; }
+.img2  { background-image: url(img/carrossel-2.jpeg);  background-size: contain; }
+.img3  { background-image: url(img/carrossel-3.jpeg);  background-size: contain; }
+.img4  { background-image: url(img/carrossel-4.jpeg);  background-size: contain; }
+.img5  { background-image: url(img/carrossel-5.jpeg);  background-size: contain; }
+.img6  { background-image: url(img/carrossel-6.jpeg);  background-size: contain; }
+.img7  { background-image: url(img/carrossel-7.jpeg);  background-size: contain; }
+.img8  { background-image: url(img/carrossel-8.jpeg);  background-size: contain; }
+.img9  { background-image: url(img/carrossel-9.jpeg);  background-size: contain; }
+.img10 { background-image: url(img/carrossel-10.jpeg); background-size: contain; }
 
 .anterior,
 .proximo {
-    color: white;
+    color: var(--cor-branca);
 }
 
-/* ---------- CONTEÚDO ---------- */
+/* ============================================================
+   SAUDAÇÃO
+   ============================================================ */
+.conteudo-saudacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: var(--gradiente-header);
+}
+
+.conteudo-saudacao h1 {
+    font-size: clamp(1.3rem, 4vw, 3rem);
+    color: var(--cor-branca);
+    margin: 0;
+}
+
+.conteudo-saudacao p {
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
+    color: var(--cor-branca);
+    margin: 0;
+}
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL
+   ============================================================ */
 #conteudo {
-    width: 80%;
+    width: 90%;
+    max-width: 800px;
     border-radius: 6px;
     padding: 18px;
-    margin-top: 5%;
-    margin-left: 6%;
+    margin: 5% auto;
 }
 
-/* ---------- ÍCONES SOCIAIS ---------- */
-#yout {
-    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg');
+#conteudo h5 {
+    font-size: clamp(20px, 5vw, 34px);
+    font-weight: bolder;
+    color: var(--cor-primaria);
+    text-align: center;
 }
 
-#wzp {
-    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg');
-}
-
-#insta {
-    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
-}
-
-#face {
-    background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
-}
-
-#yout,
-#wzp,
-#insta,
-#face {
-    filter: invert(1) brightness(2);
-}
-
-#yout:hover,
-#wzp:hover,
-#insta:hover,
-#face:hover {
-    transform: scale(1.1);
-    background-color: #3b1c1c0e;
-    border-color: #00000060;
-}
-
-/* ---------- LINKS E TEXTOS ---------- */
-.link_rs {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.opc_menu {
-    text-decoration: none;
-    color: rgb(66, 66, 66);
-    padding: 10px;
-    width: 95vw;
-}
-
-.opc {
-    background-color: white;
-    width: 25%;
-    height: 100%;
-    padding: 10px;
+#conteudo p {
+    color: var(--cor-primaria);
+    text-align: justify;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.6;
+    font-weight: normal;
 }
 
 h5 {
     font-weight: bolder;
     font-size: 16px;
-    color: rgb(31, 84, 124);
+    color: var(--cor-primaria);
     text-align: center;
 }
 
-/* ---------------------------------------------------- */
-/* === ESTILOS DO RODAPÉ (VERSÃO DESKTOP PADRÃO) === */
-/* ---------------------------------------------------- */
+p {
+    font-weight: normal;
+    text-indent: 0;
+    text-align: justify;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   SEÇÃO DE VALORES
+   ============================================================ */
+.titulo-valores {
+    color: var(--cor-primaria);
+    font-size: clamp(18px, 4vw, 30px);
+    text-align: center;
+}
+
+.valores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 18px 10px;
+    margin: 16px 0;
+}
+
+.valor {
+    width: 120px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+}
+
+.icone {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--cor-primaria);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--sombra);
+    transition: transform 0.12s ease, box-shadow 0.18s ease;
+}
+
+.icone svg {
+    width: 36px;
+    height: 36px;
+    display: block;
+    fill: var(--icone-cor);
+}
+
+.valor .titulo {
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: var(--cor-primaria);
+    padding: 0 4px;
+}
+
+.valor:hover .icone {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+#rodape {
+    width: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.9) 100%) rgb(31, 84, 124);
+}
+
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 100%;
     justify-content: space-around;
-    padding: 40px 20px;
+    padding: 30px 15px;
+    gap: 30px;
     color: #f5f5f5;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-base);
+}
+
+.footer-col {
+    text-align: center;
+    min-width: 250px;
+    flex: 1;
 }
 
 .footer-title {
     font-size: 1.5rem;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
@@ -283,20 +350,17 @@ h5 {
 
 .footer-text {
     font-size: 1rem;
-    color: #ffffff;
-}
-
-.footer-col {
-    min-width: 250px;
+    color: var(--cor-branca);
+    font-weight: bold;
 }
 
 .footer-contact {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
 }
 
-/* === ÍCONES DE CONTATO === */
 .contact-item {
     display: flex;
     align-items: center;
@@ -305,7 +369,8 @@ h5 {
 
 footer a {
     text-decoration: none;
-    color: #fff;
+    color: var(--cor-branca);
+    font-weight: bold;
 }
 
 .contato-icone {
@@ -315,11 +380,12 @@ footer a {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .contato-icone i {
-    color: #fff;
+    color: var(--cor-branca);
     font-size: 1.3rem;
 }
 
@@ -327,670 +393,194 @@ footer a {
     transform: scale(1.1);
 }
 
-/* === REDES SOCIAIS === */
+/* --- REDES SOCIAIS --- */
 .footer-socials {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 10px;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-socials a{
+    margin: 10px;
 }
 
 .icone-social {
     width: 55px;
     height: 55px;
-    background-color: #46414115;
+    background-color: rgba(70, 65, 65, 0.08);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1.5px solid #9b9b9b25;
-    transition: all 0.3s ease;
+    border: 1.5px solid rgba(155, 155, 155, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* ---------------------------------------------------- */
-/* ---------- DESKTOP (>=900px) ---------- */
-/* ---------------------------------------------------- */
-@media (min-width: 800px) {
+/* Ícones sociais */
+#yout  { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg'); }
+#wzp   { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg'); }
+#insta { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg'); }
+#face  { background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg'); }
 
-    #conteudo-geral {
-        width: 110%;
-        padding: 5%;
-        margin-top: 6vh;
-        border-radius: 5px;
+#yout, #wzp, #insta, #face {
+    filter: invert(1) brightness(2);
+}
+
+#yout:hover, #wzp:hover, #insta:hover, #face:hover {
+    transform: scale(1.1);
+    background-color: rgba(189, 186, 186, 0.08);
+    border-color: rgba(22, 21, 21, 0.42);
+}
+
+.link_rs {
+    text-decoration: none;
+    color: var(--cor-branca);
+}
+
+/* ============================================================
+   TABLET (>=600px)
+   ============================================================ */
+@media (min-width: 600px) {
+    #logo {
+        height: 18vw;
+        max-height: 120px;
+        margin-left: 38%;
     }
 
     .conteudo-saudacao {
-        margin-top: -11vh;
-        height: 30vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.6) 100%) rgb(31, 84, 124);
+        padding: 16px;
     }
+}
 
-    .conteudo-saudacao h1 {
-        font-size: 3rem;
-    }
+/* ============================================================
+   DESKTOP (>=800px)
+   ============================================================ */
+@media (min-width: 800px) {
 
-    .conteudo-saudacao p {
-        margin-top: -2vh;
-        font-size: 1.5rem;
-    }
-
+    /* --- Header desktop --- */
     #opcoes {
-        margin-top: 0vh;
+        flex-direction: column;
         margin-bottom: 2%;
-        height: 28vh;
-        background: linear-gradient(to right, rgb(9, 39, 61), rgb(31, 84, 124));
-        background-color: rgb(31, 84, 124);
+        background: linear-gradient(to right, var(--cor-primaria-escura), var(--cor-primaria));
         box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.2);
         z-index: 50;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
     }
 
     #meio_topo {
         background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        /* corrigido */
-        justify-content: space-between;
-        /* corrigido */
-        align-items: center;
-        width: 100%;
-        height: 17vh;
-        padding: 0 10px;
-        /* corrigido */
-    }
-
-    #menu_opcoes {
-        display: flex;
-        flex-direction: row;
+        height: auto;
+        padding: 0 20px;
         justify-content: center;
-        background-color: transparent;
-        width: 100%;
-        max-height: none;
-        z-index: 45;
-        height: 16vh;
-        opacity: 1;
-        margin-top: 10vh;
-    }
-
-    #menu_opcoes a {
-        font-size: 25px;
-        font-weight: bold;
-        background-color: transparent;
-        padding: 10px 15px;
-        width: auto;
-        text-align: center;
-        margin: 2% 5px;
-        color: white;
-        transition: 0.3s;
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
-    }
-
-    #menu_opcoes a:hover {
-        background-color: rgb(255, 255, 255);
-        border-radius: 8px;
-        color: rgb(31, 84, 124);
     }
 
     #logo {
-        margin: 0;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-        height: 20vh;
+        margin: 2vh auto;
+        height: 18vh;
+        max-height: none;
         background-size: contain;
-        z-index: 35;
+        width: 15%;
+        flex: none;
     }
 
     #menu {
         display: none;
     }
 
+    #menu_opcoes {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+        width: 100%;
+        max-height: none;
+        height: auto;
+        opacity: 1;
+        margin: 0;
+        padding: 10px;
+        top: auto;
+    }
+
+    #menu_opcoes a {
+        font-size: clamp(14px, 1.5vw, 22px);
+        font-weight: bold;
+        background-color: transparent;
+        color: var(--cor-branca);
+        border: none;
+        width: auto;
+        padding: 10px 15px;
+        margin: 5px;
+        transition: background-color 0.3s, color 0.3s;
+        border-radius: 0;
+    }
+
+    #menu_opcoes a:hover {
+        background-color: var(--cor-branca);
+        border-radius: 8px;
+        color: var(--cor-primaria);
+    }
+
+    /* --- Carrossel desktop --- */
     .carrossel {
         height: 75vh;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
         border-radius: 10px;
         box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.2);
-        margin-top: -22vh;
+        margin-top: -5vh;
         margin-bottom: 10vh;
     }
 
-    .item {
-        height: 60vh;
+    .img1, .img2, .img3, .img4, .img5,
+    .img6, .img7, .img8, .img9, .img10 {
+        background-size: cover;
+    }
+
+    /* --- Saudação desktop --- */
+    .conteudo-saudacao {
+        margin-top: -11vh;
+        height: 30vh;
+        padding: 20px;
+    }
+
+    /* --- Conteúdo desktop --- */
+    #conteudo-geral {
+        padding: 5%;
+        margin-top: 6vh;
+        border-radius: 5px;
     }
 
     #conteudo {
         width: 55%;
-        border-radius: 10px;
         padding: 20px;
         margin: 2% auto;
     }
 
-    #conteudo h5 {
-        font-size: 34px;
-    }
-
-    #conteudo p {
-        color: rgb(31, 84, 124);
-        margin-left: 10%;
-        text-align: justify;
-        width: 80%;
-        font-size: 22px;
-    }
-
-    #conteudo h1 {
-        text-align: center;
-        font-size: 2.5em;
-    }
-
-    p {
-        font-weight: bolder;
-        text-indent: 30px;
-        text-align: justify;
-        color: rgb(255, 255, 255);
-        font-size: 1.1em;
-        line-height: 1.6;
-    }
-
-    h5 {
-        font-weight: bolder;
-        font-size: 18px;
-        color: rgb(31, 84, 124);
-        text-align: center;
-    }
-
-    h1 {
-        color: rgb(255, 255, 255);
-        margin-bottom: 30px;
-    }
-
-    /* ===== Bloco valores (ícones circulares + título) ===== */
-    :root {
-        --cor-primaria: rgb(31, 84, 124);
-        /* cor do texto (ajuste conforme fundo) */
-        --sombra: 0 6px 14px rgba(0, 0, 0, 0.15);
-        --icone: rgb(255, 255, 255);
-    }
-
-    .titulo-valores {
-        color: var(--cor-primaria);
-        font-size: 30px;
-    }
-
-    /* Container geral */
-    .valores {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-        justify-content: center;
-        /* centro por padrão */
-        align-items: flex-start;
-        padding: 18px 10px;
-        margin: 16px 0;
-        color: var(--texto);
-    }
-
-    /* Cada item */
-    .valor {
-        width: 120px;
-        min-width: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 8px;
-    }
-
-    /* Círculo que contém o SVG */
-    .icone {
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        background: var(--cor-primaria);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: var(--sombra);
-        transition: transform .12s ease, box-shadow .18s ease;
-    }
-
-    /* SVG adaptável - usa currentColor para preencher */
-    .icone svg {
-        width: 36px;
-        height: 36px;
-        display: block;
-        fill: var(--icone);
-        /* cor do desenho dentro do círculo */
-    }
-
-    /* Título (texto embaixo) */
-    .valor .titulo {
-        font-size: 0.86rem;
-        font-weight: 700;
-        letter-spacing: .4px;
-        color: var(--cor-primaria);
-        padding: 0 4px;
-    }
-
-    /* Hover: sobe ligeiro e muda sombra */
-    .valor:hover .icone {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
-    }
-
-
-}
-
-/* ---------------------------------------------------- */
-/* ---------- DESKTOP INTERMEDIÁRIO (>=800px) ---------- */
-/* ---------------------------------------------------- */
-@media (min-width: 800px) {
+    /* --- Rodapé desktop --- */
     .footer-container {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100vw;
-        justify-content: space-around;
         padding: 40px 20px;
-        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.9) 100%) rgb(31, 84, 124);
-        color: #f5f5f5;
-        font-family: "Montserrat", sans-serif;
-    }
-
-    .footer-title {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        font-weight: bold;
-    }
-
-    .footer-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-    }
-
-    .footer-text {
-        font-size: 1rem;
-        color: #ffffff;
-        font-weight: bold;
+        flex-wrap: nowrap;
     }
 
     .footer-col {
-        min-width: 250px;
-    }
-
-    .footer-contact {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    footer a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-    }
-
-    .contato-icone {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease;
-    }
-
-    .contato-icone i {
-        color: #fff;
-        font-size: 1.3rem;
-    }
-
-    .contato-icone:hover {
-        transform: scale(1.1);
+        min-width: 200px;
     }
 
     .footer-socials {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        margin-top: 10px;
-        justify-items: center;
+        max-width: none;
     }
 
     .icone-social {
         width: 55px;
         height: 55px;
-        background-color: #46414115;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1.5px solid #9b9b9b25;
-        transition: all 0.3s ease;
         background-size: 60%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    #yout {
-        background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg');
-    }
-
-    #wzp {
-        background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg');
-    }
-
-    #insta {
-        background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg');
-    }
-
-    #face {
-        background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg');
-    }
-
-    #yout,
-    #wzp,
-    #insta,
-    #face {
-        filter: invert(1) brightness(2);
-    }
-
-    #yout:hover,
-    #wzp:hover,
-    #insta:hover,
-    #face:hover {
-        transform: scale(1.1);
-        background-color: #bdbaba15;
-        border-color: #1615156b;
     }
 }
 
-/* ---------------------------------------------------- */
-/* ---------- MOBILE (<=799px) ---------- */
-/* ---------------------------------------------------- */
-@media (max-width: 799px) {
-
-    .imgs-swiper {
-        background-color: rgb(31, 84, 124);
-        background-size: contain !important;
-        background-repeat: no-repeat;
-        height: 35vh;
-        background-position: center;
-    }
-
-    .img1 {
-        background-image: url(img/carrossel-1.jpeg);
-
-    }
-
-    .img2 {
-        background-image: url(img/carrossel-2.jpeg);
-    }
-
-    .img3 {
-        background-image: url(img/carrossel-3.jpeg);
-    }
-
-    .img4 {
-        background-image: url(img/carrossel-4.jpeg);
-    }
-
-    .img5 {
-        background-image: url(img/carrossel-5.jpeg);
-    }
-
-    .img6 {
-        background-image: url(img/carrossel-6.jpeg);
-    }
-
-    .img7 {
-        background-image: url(img/carrossel-7.jpeg);
-    }
-
-    .img8 {
-        background-image: url(img/carrossel-8.jpeg);
-
-    }
-
-    .img9 {
-        background-image: url(img/carrossel-9.jpeg);
-    }
-
-    .img10 {
-        background-image: url(img/carrossel-10.jpeg);
-    }
-
-    #meio_topo {
-        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.6) 100%) rgb(31, 84, 124);
-        display: flex;
-        flex-direction: row;
-        /* corrigido */
-        justify-content: space-between;
-        /* corrigido */
-        align-items: center;
-        width: 100%;
-        height: 17vh;
-        padding: 0 10px;
-        /* corrigido */
-    }
-
-    #menu_opcoes {
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(15, 63, 100);
-        padding: 10px;
-        position: absolute;
-        top: 14vh;
-        right: 0;
-        width: 100vw;
-        text-align: center;
-        transition: all 0.5s ease-out;
-        box-sizing: border-box;
-        max-height: 0;
-        opacity: 0;
-        margin-top: 5.5%;
-        margin-bottom: 5%;
-        z-index: 25;
-    }
-
+/* ============================================================
+   DESKTOP LARGO (>=1200px)
+   ============================================================ */
+@media (min-width: 1200px) {
     #menu_opcoes a {
-        display: inline-block;
-        background-color: rgb(15, 63, 100);
-        color: white;
-        border-bottom: solid white;
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
-        width: 35%;
+        font-size: 20px;
     }
-
-
-    #menu {
-        background-image: url(img/img_menu.png);
-        background-size: 35%;
-        margin-left: 9%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        cursor: pointer;
-    }
-
-    #logo {
-        margin-left: 36.5%;
-        background-size: 100%;
-    }
-
-    #rodape {
-        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.6) 100%) rgb(31, 84, 124);
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px 15px;
-        gap: 30px;
-    }
-
-    .footer-col {
-        min-width: 90%;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .footer-title,
-    .footer-subtitle {
-        text-align: center;
-        margin-bottom: 8px;
-    }
-
-    .footer-text {
-        text-align: center;
-    }
-
-    .footer-contact {
-        align-items: center;
-        gap: 10px;
-    }
-
-    .contact-item {
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .footer-socials {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        justify-content: center;
-        width: 100%;
-        max-width: 300px;
-        margin: 10px auto 0;
-    }
-
-    .icone-social {
-        width: 45px;
-        height: 45px;
-        background-size: 50%;
-    }
-
-    #conteudo p {
-        color: rgb(31, 84, 124);
-        text-align: justify;
-    }
-
-    #conteudo h5 {
-        font-size: 28px;
-    }
-
-    .conteudo-saudacao {
-        margin-bottom: -5vh;
-        margin-top: -0.2vh;
-        height: 18vh;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: linear-gradient(to bottom, transparent 0%, rgba(12, 47, 73, 0.6) 100%) rgb(31, 84, 124);
-    }
-
-    .conteudo-saudacao h1 {
-        font-size: 1.5rem;
-        color: white;
-    }
-
-    .conteudo-saudacao p {
-        font-size: 0.9rem;
-        color: white;
-    }
-
-
-    /* ===== Bloco valores (ícones circulares + título) ===== */
-    :root {
-        --cor-primaria: rgb(31, 84, 124);
-        /* cor do texto (ajuste conforme fundo) */
-        --sombra: 0 6px 14px rgba(0, 0, 0, 0.15);
-        --icone: rgb(255, 255, 255);
-    }
-
-    /* Container geral */
-    .valores {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-        justify-content: center;
-        /* centro por padrão */
-        align-items: flex-start;
-        width: 100vw;
-        padding: 18px 10px;
-        margin: 16px 0;
-        color: var(--texto);
-    }
-
-    /* Cada item */
-    .valor {
-        width: 120px;
-        min-width: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 8px;
-    }
-
-    /* Círculo que contém o SVG */
-    .icone {
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        background: var(--cor-primaria);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: var(--sombra);
-        transition: transform .12s ease, box-shadow .18s ease;
-    }
-
-    /* SVG adaptável - usa currentColor para preencher */
-    .icone svg {
-        width: 36px;
-        height: 36px;
-        display: block;
-        fill: var(--icone);
-        /* cor do desenho dentro do círculo */
-    }
-
-    /* Título (texto embaixo) */
-    .valor .titulo {
-        font-size: 0.86rem;
-        font-weight: 700;
-        letter-spacing: .4px;
-        color: var(--cor-primaria);
-        padding: 0 4px;
-    }
-
-    /* Hover: sobe ligeiro e muda sombra */
-    .valor:hover .icone {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
-    }
-
-
 }
