@@ -4,6 +4,8 @@
 #item_1 {
     background-image: url(../img/img_futsal.jpeg);
     background-size: 100%;
+    width: 16vw;
+    height: 25vh;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -11,6 +13,8 @@
 #item_2 {
     background-image: url(../img/img_volei.jpeg);
     background-size: 100%;
+    width: 16vw;
+    height: 25vh;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -18,6 +22,8 @@
 #item_3 {
     background-image: url(../img/img_lanchonete.jpeg);
     background-size: 100%;
+    width: 16vw;
+    height: 25vh;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -265,6 +271,31 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+/* ============================================================
+   IMAGENS DOS ITENS
+   ============================================================ */
+#item_1 {
+    background-image: url(../img/img_futsal.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#item_2 {
+    background-image: url(../img/img_volei.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#item_3 {
+    background-image: url(../img/img_lanchonete.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
     html, body {
         overflow-x: hidden;
     }
