@@ -1,27 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // elementos opcionais
-    const menu = document.getElementById("menu");
-    const opcoes = document.getElementById("menu_opcoes");
     const items_ralth = document.getElementById("items_ralth");
 
-    // --- MENU RESPONSIVO ---
-    if (menu && opcoes) {
-        menu.addEventListener("click", (e) => {
-            e.stopPropagation();
-            opcoes.classList.toggle("mostrar");
-        });
+  const menu = document.getElementById("menu");
+  const opcoes1 = document.getElementById("menu_opcoes_1");
+  const opcoes2 = document.getElementById("menu_opcoes_2");
 
-        document.addEventListener("click", (e) => {
-            if (!menu.contains(e.target) && !opcoes.contains(e.target)) {
-                opcoes.classList.remove("mostrar");
-            }
-        });
+  if (!menu || !opcoes1 || !opcoes2) return;
 
-        opcoes.addEventListener("click", (e) => e.stopPropagation());
-    } else {
-        console.warn("Menu não inicializado porque 'menu' ou 'menu_opcoes' não foram encontrados.");
-    }
+  menu.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    opcoes1.classList.toggle("mostrar");
+    opcoes2.classList.toggle("mostrar");
+  });
 
     // ============================================================
     // BASE DE DADOS

@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // normaliza strings (remove acento e espaços)
   const norm = s => (s || '').toString().trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-  const menu = document.getElementById('menu');
-  const opcoes = document.getElementById('menu_opcoes');
+
+  const menu = document.getElementById("menu");
+  const opcoes1 = document.getElementById("menu_opcoes_1");
+  const opcoes2 = document.getElementById("menu_opcoes_2");
   const botoesFiltro = Array.from(document.querySelectorAll('.filtro'));
   const cards = Array.from(document.querySelectorAll('.card_evento2'));
   const meses = Array.from(document.querySelectorAll('.mes_eventos'));
@@ -14,18 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // segurança
   if (!menu || !opcoes) console.warn("menu ou menu_opcoes não encontrados.");
 
-  // menu hamburguer
-  if (menu && opcoes) {
-    menu.addEventListener('click', (e) => {
-      e.stopPropagation();
-      opcoes.classList.toggle('mostrar');
-    });
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !opcoes.contains(e.target))
-        opcoes.classList.remove('mostrar');
-    });
-    opcoes.addEventListener('click', e => e.stopPropagation());
-  }
+
+  if (!menu || !opcoes1 || !opcoes2) return;
+
+  menu.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    opcoes1.classList.toggle("mostrar");
+    opcoes2.classList.toggle("mostrar");
+  });
 
   // ===============================================================
   // NOVA FUNÇÃO DE FILTRO + REORGANIZAÇÃO DOS CARDS
