@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById("menu");
-    const opcoes = document.getElementById("menu_opcoes");
+    const opcoes = document.getElementById("menu_opcoes_1");
+    const opcoes = document.getElementById("menu_opcoes_2");
     const containerEscolas = document.getElementById("escolas");
 
     if (!menu || !opcoes || !containerEscolas) {
