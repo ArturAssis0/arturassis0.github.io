@@ -21,27 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     opcoes.addEventListener("click", (e) => e.stopPropagation());
 
-const escolas = {
-    item_1: {
-        nome: "ESCOLA DE FUTSAL CCV",
-
-        horarios1Titulo: "TURNO MANHÃ – 2 DIAS DA SEMANA",
-        horarios1Informacoes: "2ª e 4ª FEIRA • 11H30 às 12H20 – SUB 08 | 10 | 12",
-
-        horarios2Titulo: "TURNO TARDE – 2 DIAS DA SEMANA",
-        horarios2Informacoes: "2ª e 4ª FEIRA • 17H40 às 18H30 – SUB 08 | 10 | 12",
-
-        horarios3Titulo: "TURNO TARDE – INFANTIL",
-        horarios3Informacoes: "2ª e 4ª FEIRA • 16H50 às 17H35 – SUB 06",
-
-        descricao: `A Escola de Futsal CCV está inserida em um dos Colégios da rede particular mais tradicionais de Contagem.
-        O COLÉGIO CRISTÃO VITÓRIA possui como diferencial seus princípios cristãos e uma história de mais de 25 anos de Excelência de Ensino.
-        Iniciamos nossa parceria em 2018, com a proposta de ensinar o FUTSAL de forma dinâmica e lúdica no âmbito escolar, utilizando as dependências do Colégio
-        e proporcionando aos alunos um ambiente seguro, acolhedor e propício ao aprendizado e às amizades.`,
-
-        nome2: "DIAS E HORÁRIOS",
-        imagem: "img/img_futsal_ccv.jpeg",
-    },
+const escolas = {   
 
     item_2: {
         nome: "ESCOLA DE FUTSAL SUPREMO",

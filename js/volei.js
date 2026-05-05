@@ -75,30 +75,6 @@ sempre garantindo segurança, acolhimento e estímulo ao aprendizado.
         },
 
         // =======================================================
-        // 3 — CONSTRUIR +
-        // =======================================================
-        item_3: {
-            nome: "ESCOLA DE VÔLEI CONSTRUIR +",
-            descricao: `
-A Escola de Vôlei Construir+ está inserida em um dos Colégios da rede particular mais tradicionais de Contagem.
-O COLÉGIO CONSTRUIR+ possui uma excelente estrutura e uma história marcada pela Excelência de Ensino.
-
-A parceria, iniciada em 2024, tem como objetivo ensinar VÔLEI de forma dinâmica e divertida,
-garantindo aos alunos um ambiente seguro, acolhedor e inspirador.
-            `,
-
-            nome2: "DIAS E HORÁRIOS",
-
-            horarios1Titulo: "TURNO MANHÃ – (SEM TURMAS)",
-            horarios1Informacoes: "Nenhuma turma disponível no período da manhã.",
-
-            horarios2Titulo: "TURNO TARDE – 2 DIAS NA SEMANA",
-            horarios2Informacoes: "3ª E 5ª FEIRA • 17H40 ÀS 18H30 – SUB 11 | 13",
-
-            imagem: "img/img_volei_construir.jpeg",
-        },
-
-        // =======================================================
         // 4 — CRESCER
         // =======================================================
         item_4: {
