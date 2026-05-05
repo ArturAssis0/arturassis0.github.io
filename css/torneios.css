@@ -302,6 +302,7 @@
 
 /* ====== CONTEÚDO DO CARD ====== */
 .card_info {
+    margin-left: 10%;
     padding: 20px;
 }
 
