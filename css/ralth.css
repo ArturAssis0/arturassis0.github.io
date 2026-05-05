@@ -104,7 +104,8 @@ hr {
     margin: 0 auto;
     color: rgb(31, 84, 124);
     display: grid;
-    grid-template-columns: 1fr 1fr; /* DUAS COLUNAS */
+    grid-template-columns: 1fr 1fr;
+    /* DUAS COLUNAS */
     gap: 25px;
     text-align: left;
 }
@@ -164,6 +165,32 @@ hr {
    ============================================================ */
 @media (max-width: 1068px) {
 
+    #item_1 {
+        background-image: url(../img/img_futsal.jpeg);
+        background-size: 100%;
+        width: 16vw;
+        height: 25vh;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #item_2 {
+        background-image: url(../img/img_volei.jpeg);
+        background-size: 100%;
+        width: 16vw;
+        height: 25vh;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #item_3 {
+        background-image: url(../img/img_lanchonete.jpeg);
+        background-size: 100%;
+        width: 16vw;
+        height: 25vh;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
     .info-conteudo {
         flex-direction: column;
@@ -172,13 +199,15 @@ hr {
 
     .info-texto {
         width: 100%;
-        grid-template-columns: 1fr; /* vira 1 coluna */
+        grid-template-columns: 1fr;
+        /* vira 1 coluna */
         text-align: left;
     }
 
     .info-texto .titulo,
     .info-texto h2 {
-        grid-column: span 1; /* ajusta p/ 1 coluna */
+        grid-column: span 1;
+        /* ajusta p/ 1 coluna */
         text-align: center;
     }
 
@@ -201,6 +230,7 @@ hr {
 footer {
     margin-top: 6.2%;
 }
+
 /* ============================================================
    BLOCOS DE SUBTÍTULO + CONTEÚDO (GRID 2x2)
    ============================================================ */
@@ -256,7 +286,7 @@ footer {
     color: rgb(31, 84, 124);
 }
 
-.info-conteudo.centralizado p{
+.info-conteudo.centralizado p {
     color: rgb(31, 84, 124);
 }
 
@@ -272,44 +302,45 @@ footer {
 
 @media (max-width: 768px) {
 
-/* ============================================================
+    /* ============================================================
    IMAGENS DOS ITENS
    ============================================================ */
-#item_1 {
-    background-image: url(../img/img_futsal.jpeg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #item_1 {
+        background-image: url(../img/img_futsal.jpeg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#item_2 {
-    background-image: url(../img/img_volei.jpeg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #item_2 {
+        background-image: url(../img/img_volei.jpeg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#item_3 {
-    background-image: url(../img/img_lanchonete.jpeg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #item_3 {
+        background-image: url(../img/img_lanchonete.jpeg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
     }
 
-    
-.item-lista-esquerda {
 
-    color: red;
+    .item-lista-esquerda {
 
-}
+        color: red;
 
-hr {
-    border: solid 0.1px rgb(31, 84, 124);
-}
+    }
+
+    hr {
+        border: solid 0.1px rgb(31, 84, 124);
+    }
 
 
     /* Container de itens */
@@ -346,17 +377,18 @@ hr {
         gap: 15px;
         width: 100%;
         margin: 0;
-        text-align: center; /* centraliza a lanchonete e demais itens */
+        text-align: center;
+        /* centraliza a lanchonete e demais itens */
     }
 
     /* Todos os filhos diretos de info-conteudo ocupam 100% */
-    .info-conteudo > div {
+    .info-conteudo>div {
         width: 100%;
     }
 
     /* Ajusta textos */
     .info-texto {
-        display: flex; 
+        display: flex;
         flex-direction: column;
         text-align: justify;
         width: 100%;
