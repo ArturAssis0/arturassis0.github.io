@@ -4,7 +4,7 @@
 #item_1 {
     background-image: url(../img/img_futsal.jpeg);
     background-size: 100%;
-    width: 52vw;
+    width: 16vw;
     height: 25vh;
     background-repeat: no-repeat;
     background-position: center;
@@ -13,7 +13,7 @@
 #item_2 {
     background-image: url(../img/img_volei.jpeg);
     background-size: 100%;
-    width: 52vw;
+    width: 16vw;
     height: 25vh;
     background-repeat: no-repeat;
     background-position: center;
@@ -22,7 +22,7 @@
 #item_3 {
     background-image: url(../img/img_lanchonete.jpeg);
     background-size: 100%;
-    width: 52vw;
+    width: 16vw;
     height: 25vh;
     background-repeat: no-repeat;
     background-position: center;
@@ -305,26 +305,34 @@ footer {
     /* ============================================================
    IMAGENS DOS ITENS
    ============================================================ */
-    #item_1 {
-        background-image: url(../img/img_futsal.jpeg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+#item_1 {
+    background-image: url(../img/img_futsal.jpeg);
+    background-size: 100%;
+    width: 52vw;
+    height: 25vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
-    #item_2 {
-        background-image: url(../img/img_volei.jpeg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+#item_2 {
+    background-image: url(../img/img_volei.jpeg);
+    background-size: 100%;
+    width: 52vw;
+    height: 25vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
-    #item_3 {
-        background-image: url(../img/img_lanchonete.jpeg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+#item_3 {
+    background-image: url(../img/img_lanchonete.jpeg);
+    background-size: 100%;
+    width: 52vw;
+    height: 25vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    
 
     html,
     body {
