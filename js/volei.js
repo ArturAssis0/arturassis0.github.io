@@ -1,31 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const menu = document.getElementById("menu");
-    const opcoes = document.getElementById("menu_opcoes_1");
-    const opcoes = document.getElementById("menu_opcoes_2");
     const containerEscolas = document.getElementById("escolas");
+    const menu = document.getElementById("menu");
+    const opcoes1 = document.getElementById("menu_opcoes_1");
+    const opcoes2 = document.getElementById("menu_opcoes_2");
+
 
     if (!menu || !opcoes || !containerEscolas) {
         console.warn("Elemento(s) faltando: verifique ids 'menu', 'menu_opcoes' e 'escolas'");
         return;
     }
 
-    // ======== MENU RESPONSIVO ========
+
+    if (!menu || !opcoes1 || !opcoes2) return;
+
     menu.addEventListener("click", (e) => {
         e.stopPropagation();
-        opcoes.classList.toggle("mostrar");
+
+        opcoes1.classList.toggle("mostrar");
+        opcoes2.classList.toggle("mostrar");
     });
-
-    document.addEventListener("click", (e) => {
-        if (!menu.contains(e.target) && !opcoes.contains(e.target)) {
-            opcoes.classList.remove("mostrar");
-        }
-    });
-
-    opcoes.addEventListener("click", (e) => e.stopPropagation());
-
-    // ============================================================
-    // ==========   BASE DE DADOS COMPLETA DAS ESCOLAS   ==========
-    // ============================================================
     const escolas = {
         // =======================================================
         // 1 — SUPREMO
