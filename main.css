@@ -194,37 +194,22 @@ body.menu-aberto {
 }
 
 .img4 {
-    background-image: url(img/carrossel-4.jpeg);
+    background-image: url(img/carrossel_4.jpeg);
     background-size: contain;
 }
 
 .img5 {
-    background-image: url(img/carrossel-5.jpeg);
+    background-image: url(img/carrossel_5.jpeg);
     background-size: contain;
 }
 
 .img6 {
-    background-image: url(img/carrossel-6.jpeg);
+    background-image: url(img/carrossel_6.jpeg);
     background-size: contain;
 }
 
 .img7 {
-    background-image: url(img/carrossel-7.jpeg);
-    background-size: contain;
-}
-
-.img8 {
-    background-image: url(img/carrossel-8.jpeg);
-    background-size: contain;
-}
-
-.img9 {
-    background-image: url(img/carrossel-9.jpeg);
-    background-size: contain;
-}
-
-.img10 {
-    background-image: url(img/carrossel-10.jpeg);
+    background-image: url(img/carrossel_7.jpeg);
     background-size: contain;
 }
 
