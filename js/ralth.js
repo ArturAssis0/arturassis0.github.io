@@ -3,18 +3,37 @@ document.addEventListener("DOMContentLoaded", () => {
     // elementos opcionais
     const items_ralth = document.getElementById("items_ralth");
 
-  const menu = document.getElementById("menu");
-  const opcoes1 = document.getElementById("menu_opcoes_1");
-  const opcoes2 = document.getElementById("menu_opcoes_2");
+    const menu = document.getElementById("menu");
+    const opcoes1 = document.getElementById("menu_opcoes_1");
+    const opcoes2 = document.getElementById("menu_opcoes_2");
 
-  if (!menu || !opcoes1 || !opcoes2) return;
+    if (!menu || !opcoes1 || !opcoes2) return;
 
-  menu.addEventListener("click", (e) => {
-    e.stopPropagation();
+    // ============================================================
+    // MENU MOBILE UNIFICADO
+    // ============================================================
+    const menuUnificado = document.createElement("div");
+    menuUnificado.id = "menu_mobile_unificado";
 
-    opcoes1.classList.toggle("mostrar");
-    opcoes2.classList.toggle("mostrar");
-  });
+    const todosOsLinks = [
+        ...opcoes1.querySelectorAll("a"),
+        ...opcoes2.querySelectorAll("a"),
+    ];
+
+    todosOsLinks.forEach(link => {
+        const clone = link.cloneNode(true);
+        menuUnificado.appendChild(clone);
+    });
+
+    const headerContainer = document.getElementById("header-container");
+    if (headerContainer) {
+        headerContainer.insertAdjacentElement("afterend", menuUnificado);
+    }
+
+    menu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menuUnificado.classList.toggle("mostrar");
+    });
 
     // ============================================================
     // BASE DE DADOS
@@ -187,10 +206,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     </div>
 </div>
-                `} else {
+                    `;
 
-                    //FUTSAL
+                } else {
 
+                    // FUTSAL
                     html = `
 <div class="info-conteudo">
     <div class="info-texto">
@@ -232,12 +252,11 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
     </div>
-            <div class="info-imagem-ralth" style="background-image: url(img/img-ralth-futsal.jpeg)">
-        </div>
+    <div class="info-imagem-ralth" style="background-image: url(img/img-ralth-futsal.jpeg)">
+    </div>
 </div>
-                `
-
-                };
+                    `;
+                }
             }
 
             infoSection.innerHTML = html;

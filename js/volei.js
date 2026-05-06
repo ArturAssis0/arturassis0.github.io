@@ -4,21 +4,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const opcoes1 = document.getElementById("menu_opcoes_1");
     const opcoes2 = document.getElementById("menu_opcoes_2");
 
-
-    if (!menu || !opcoes || !containerEscolas) {
-        console.warn("Elemento(s) faltando: verifique ids 'menu', 'menu_opcoes' e 'escolas'");
+    if (!menu || !opcoes1 || !opcoes2 || !containerEscolas) {
+        console.warn("Elemento(s) faltando: verifique ids 'menu', 'menu_opcoes_1', 'menu_opcoes_2' e 'escolas'");
         return;
     }
 
+    // ============================================================
+    // MENU MOBILE UNIFICADO
+    // ============================================================
+    const menuUnificado = document.createElement("div");
+    menuUnificado.id = "menu_mobile_unificado";
 
-    if (!menu || !opcoes1 || !opcoes2) return;
+    const todosOsLinks = [
+        ...opcoes1.querySelectorAll("a"),
+        ...opcoes2.querySelectorAll("a"),
+    ];
+
+    todosOsLinks.forEach(link => {
+        const clone = link.cloneNode(true);
+        menuUnificado.appendChild(clone);
+    });
+
+    const headerContainer = document.getElementById("header-container");
+    if (headerContainer) {
+        headerContainer.insertAdjacentElement("afterend", menuUnificado);
+    }
 
     menu.addEventListener("click", (e) => {
         e.stopPropagation();
-
-        opcoes1.classList.toggle("mostrar");
-        opcoes2.classList.toggle("mostrar");
+        menuUnificado.classList.toggle("mostrar");
     });
+
+    // ============================================================
+    // BASE DE DADOS
+    // ============================================================
     const escolas = {
         // =======================================================
         // 1 — SUPREMO
@@ -94,9 +113,8 @@ proporcionando aos alunos um ambiente acolhedor e ideal para o aprendizado.
     };
 
     // ============================================================
-    // ========== FUNÇÃO DE EXIBIR INFORMAÇÕES ====================
+    // CONTAINER DE INFORMAÇÕES
     // ============================================================
-
     let infoSection = document.getElementById("info_escola");
     if (!infoSection) {
         infoSection = document.createElement("div");
