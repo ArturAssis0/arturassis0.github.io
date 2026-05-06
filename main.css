@@ -62,7 +62,7 @@ body {
 /* LOGO */
 #logo {
     margin-top: 8%;
-    width: 80vw;
+    width: 30vw;
     height: 70vh;
     background-image: url(img/escudo_ralth_site.png);
     background-size: contain;
@@ -86,15 +86,20 @@ body {
     z-index: 100;
 }
 
-/* ================= MENU ================= */
+/* ================= MENU MOBILE ================= */
 
-/* CONTAINER BASE */
-.menu-lado {
+/* Esconde os dois blocos originais no mobile */
+#menu_opcoes_1,
+#menu_opcoes_2 {
+    display: none !important;
+}
+
+/* Container único do menu mobile */
+#menu_mobile_unificado {
     position: absolute;
-    top: 14vhs;
+    top: 14vh;
     left: 0;
-    width: 100%;
-    margin-top: 86%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,32 +107,21 @@ body {
 
     max-height: 0;
     opacity: 0;
-    overflow-y: auto;
+    overflow: hidden;
 
-    transition: all 0.4s ease;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
 
     z-index: 50;
 }
 
-/* ABERTO */
-.menu-lado.mostrar {
+#menu_mobile_unificado.mostrar {
     max-height: 100vh;
     opacity: 1;
     padding: 15px 0;
 }
 
-/* REMOVE POSICIONAMENTO QUEBRADO */
-#menu_opcoes_1,
-#menu_opcoes_2 {
-    position: static;
-    border: solid 50px --cor-primaria;
-    width: 100%;
-}
-
-/* LINKS */
-.menu-lado a {
+#menu_mobile_unificado a {
     display: block;
-
     width: 85%;
     padding: 14px;
     margin: 8px 0;
@@ -147,8 +141,7 @@ body {
     transition: all 0.2s ease;
 }
 
-/* HOVER */
-.menu-lado a:hover {
+#menu_mobile_unificado a:hover {
     background: var(--cor-primaria-escura);
 }
 
@@ -156,6 +149,7 @@ body {
 body.menu-aberto {
     overflow: hidden;
 }
+
 /* ============================================================
    CARROSSEL
    ============================================================ */
@@ -506,6 +500,17 @@ footer a {
    DESKTOP (>=800px)
    ============================================================ */
 @media (min-width: 800px) {
+
+    /* Restaura os blocos originais no desktop */
+    #menu_opcoes_1,
+    #menu_opcoes_2 {
+        display: flex !important;
+    }
+
+    /* Esconde o container unificado no desktop */
+    #menu_mobile_unificado {
+        display: none !important;
+    }
 
     /* --- Header desktop --- */
     #opcoes {
