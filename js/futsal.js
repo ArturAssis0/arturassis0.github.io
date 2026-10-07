@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         para proporcionar aos alunos um ambiente seguro, acolhedor e propício para o aprendizado e novas amizades.`,
 
             nome2: "DIAS E HORÁRIOS",
-            imagem: "img/logo_supremo.png",
+            imagem: "img/img_futsal_supremo.jpeg",
         },
 
         item_3: {

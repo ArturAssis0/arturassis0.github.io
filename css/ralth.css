@@ -170,6 +170,10 @@
     gap: 20px;
 }
 
+.conteudo-ralth #items_ralth {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .item-ralth {
     position: relative;
     display: flex;
@@ -556,6 +560,11 @@
         min-height: 270px;
     }
 
+    .conteudo-ralth .item-ralth:last-child {
+        grid-column: auto;
+        min-height: 360px;
+    }
+
     .ralth-turmas-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -600,9 +609,17 @@
         gap: 14px;
     }
 
+    .conteudo-ralth #items_ralth {
+        grid-template-columns: 1fr;
+    }
+
     .item-ralth,
     .item-ralth:last-child {
         grid-column: auto;
+        min-height: 320px;
+    }
+
+    .conteudo-ralth #items_ralth .item-ralth {
         min-height: 320px;
     }
 

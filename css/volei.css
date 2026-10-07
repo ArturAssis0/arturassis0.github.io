@@ -1,7 +1,12 @@
 .volei-page {
-    --modalidade-cor: #087ca2;
-    --modalidade-cor-escura: #063b5a;
-    --modalidade-destaque: #b5e9f4;
+    --modalidade-cor: #1f547c;
+    --modalidade-cor-escura: #09273d;
+    --modalidade-destaque: #a7d9f7;
+}
+
+.volei-page #items_ralth {
+    max-width: 560px;
+    grid-template-columns: minmax(0, 1fr);
 }
 
 .modalidade-page {
@@ -19,9 +24,9 @@
     padding: clamp(30px, 6vw, 62px);
     border-radius: 22px;
     background:
-        radial-gradient(ellipse at 100% 0%, rgba(49, 191, 206, 0.28), transparent 38%),
-        linear-gradient(120deg, var(--modalidade-cor-escura), var(--modalidade-cor) 76%, #259bb3);
-    box-shadow: 0 18px 40px rgba(6, 59, 90, 0.2);
+        radial-gradient(ellipse at 100% 0%, rgba(87, 164, 211, 0.3), transparent 38%),
+        linear-gradient(120deg, var(--modalidade-cor-escura), var(--modalidade-cor) 76%, #2c6b96);
+    box-shadow: 0 18px 40px rgba(9, 39, 61, 0.2);
     color: #fff;
 }
 
