@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="https://arturassis0.github.io/" target="_self">
+    <base href="/" target="_self">
     <title translate="no">Ralth Esportes - Vôlei</title>
     <link rel="stylesheet" href="css/volei.css"> <!--tirar o ../ do css-->
     <link rel="stylesheet" href="main.css">
@@ -30,30 +30,66 @@
                 <div id="menu_opcoes_2" class="menu-lado">
                     <a style="border-bottom: solid white;" href="volei/">Vôlei</a>
                     <a href="eventos/">Eventos</a>
-                    <a href="https://app.planejadordetreino.com/login" target="_blank">Professores</a>
+                    <a href="professores/">Professores</a>
                 </div>
 
             </div>
         </div>
-        <section>
-            <div id="escolas">
-                <div id="item_1" class="iten_escola">
-
+        <main class="modalidade-page volei-page">
+            <section class="modalidade-apresentacao" aria-labelledby="titulo-modalidade">
+                <div class="modalidade-apresentacao-conteudo">
+                    <span class="modalidade-etiqueta"><i class="fa-solid fa-volleyball" aria-hidden="true"></i> VÔLEI
+                        RALTH</span>
+                    <h1 id="titulo-modalidade">Aprenda, jogue e evolua</h1>
+                    <p>Encontre uma de nossas escolas parceiras e descubra as turmas de vôlei para crianças e
+                        adolescentes.</p>
                 </div>
-                <div id="item_2" class="iten_escola">
+                <div class="modalidade-destaque" aria-label="Faixa etária atendida">
+                    <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                    <span><strong>De 8 a 13 anos</strong>Aprendizado para cada fase</span>
+                </div>
+            </section>
 
+            <section class="escolas-section" aria-labelledby="titulo-escolas">
+                <div class="escolas-cabecalho">
+                    <span class="escolas-sobretitulo">Nossas parceiras</span>
+                    <h2 id="titulo-escolas">Escolha uma escola</h2>
+                    <p>Toque ou clique em um card para conhecer as escolas e consultar os horários.</p>
                 </div>
 
-                <div id="item_4" class="iten_escola">
-
+                <div id="escolas" aria-label="Escolas de vôlei">
+                    <button type="button" id="item_1" class="iten_escola" aria-controls="info_escola"
+                        aria-expanded="false">
+                        <span class="escola-card-logo" aria-hidden="true"></span>
+                        <span class="escola-card-info">
+                            <span class="escola-card-nome">Supremo</span>
+                            <span class="escola-card-acao">Ver horários e informações <i
+                                    class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <button type="button" id="item_2" class="iten_escola" aria-controls="info_escola"
+                        aria-expanded="false">
+                        <span class="escola-card-logo" aria-hidden="true"></span>
+                        <span class="escola-card-info">
+                            <span class="escola-card-nome">Elizabeth Kalil</span>
+                            <span class="escola-card-acao">Ver horários e informações <i
+                                    class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <button type="button" id="item_4" class="iten_escola" aria-controls="info_escola"
+                        aria-expanded="false">
+                        <span class="escola-card-logo" aria-hidden="true"></span>
+                        <span class="escola-card-info">
+                            <span class="escola-card-nome">Crescer</span>
+                            <span class="escola-card-acao">Ver horários e informações <i
+                                    class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </span>
+                    </button>
                 </div>
 
-            </div>
-        </section>
-
-        <section>
-
-        </section>
+                <div id="info_escola" class="info-escola" aria-live="polite" aria-atomic="true" hidden></div>
+            </section>
+        </main>
 
         <footer id="rodape">
             <div class="footer-container">

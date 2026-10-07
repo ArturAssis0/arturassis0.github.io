@@ -120,43 +120,60 @@ proporcionando aos alunos um ambiente acolhedor e ideal para o aprendizado.
         infoSection = document.createElement("div");
         infoSection.id = "info_escola";
         infoSection.className = "info-escola";
-        infoSection.style.display = "none";
+        infoSection.hidden = true;
         containerEscolas.parentNode.insertBefore(infoSection, containerEscolas.nextSibling);
     }
 
     const itens = document.querySelectorAll(".iten_escola");
+    const fecharInformacoes = () => {
+        infoSection.hidden = true;
+        itens.forEach(item => item.setAttribute("aria-expanded", "false"));
+    };
 
     itens.forEach(item => {
         item.addEventListener("click", () => {
             const dados = escolas[item.id];
+            if (!dados) {
+                console.warn(`Nenhuma informação cadastrada para ${item.id}.`);
+                return;
+            }
 
+            itens.forEach(outroItem => {
+                outroItem.setAttribute("aria-expanded", String(outroItem === item));
+            });
             infoSection.innerHTML = `
-                <div class="info-conteudo">
+                <article class="info-conteudo">
                     <div class="info-texto">
+                        <span class="escolas-sobretitulo">Conheça a escola</span>
                         <h2>${dados.nome}</h2>
                         <p>${dados.descricao}</p>
 
-                        <h2>${dados.nome2}</h2>
-
-                        <h3>${dados.horarios1Titulo}</h3>
-                        <p>${dados.horarios1Informacoes}</p>
-
-                        <h3>${dados.horarios2Titulo}</h3>
-                        <p>${dados.horarios2Informacoes}</p>
+                        <section class="info-horarios" aria-label="Horários das turmas">
+                            <h3>${dados.nome2}</h3>
+                            <div class="grade-horarios">
+                                ${[1, 2].map(numero => dados[`horarios${numero}Informacoes`] ? `
+                                    <div class="bloco-horario">
+                                        <h4>${dados[`horarios${numero}Titulo`]}</h4>
+                                        <p>${dados[`horarios${numero}Informacoes`]}</p>
+                                    </div>
+                                ` : "").join("")}
+                            </div>
+                        </section>
                     </div>
-
-                    <div class="info-imagem" style="background-image: url(${dados.imagem});"></div>
-                </div>
+                    <div class="info-imagem" role="img" aria-label="Escola ${dados.nome}"
+                        style="background-image: url('${dados.imagem}');"></div>
+                    <button type="button" class="fechar-info">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i> Fechar informações
+                    </button>
+                </article>
             `;
 
-            infoSection.style.display = "block";
+            infoSection.hidden = false;
+            infoSection.querySelector(".fechar-info").addEventListener("click", fecharInformacoes);
 
             const bloco = infoSection.querySelector(".info-conteudo");
             setTimeout(() => bloco.classList.add("ativo"), 20);
-
-            if (window.innerWidth <= 1068) {
-                infoSection.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
+            infoSection.scrollIntoView({ behavior: "smooth", block: "start" });
         });
     });
 });

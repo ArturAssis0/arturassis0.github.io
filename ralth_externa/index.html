@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="https://arturassis0.github.io/" target="_self">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="icon" href="img/escudo_ralth_site.png">
-    <link rel="stylesheet" href="css/ralth.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="/img/escudo_ralth_site.png">
+    <link rel="stylesheet" href="/css/ralth.css">
+    <link rel="stylesheet" href="/main.css">
     <title translate="no">Ralth Esportes - Ralth Externa</title>
 
 </head>
@@ -22,55 +21,87 @@
       <div id="header-container">
         
         <div id="menu_opcoes_1" class="menu-lado">
-          <a href="./">Home</a>
-          <a style="border-bottom: solid white;"  href="ralth_externa/">Ralth Externa</a>
-          <a href="futsal/">Futsal</a>
+          <a href="/">Home</a>
+          <a style="border-bottom: solid white;" href="/ralth_externa/">Ralth Externa</a>
+          <a href="/futsal/">Futsal</a>
         </div>
 
         <div id="logo"></div>
 
         <div id="menu_opcoes_2" class="menu-lado">
-          <a href="volei/">Vôlei</a>
-          <a href="eventos/">Eventos</a>
-          <a href="https://app.planejadordetreino.com/login" target="_blank">Professores</a>
+          <a href="/volei/">Vôlei</a>
+          <a href="/eventos/">Eventos</a>
+          <a href="/professores/">Professores</a>
         </div>
 
       </div>
     </div>
 
-        <section class="conteudo-ralth">
-
-            <section class="infs-gerais">
-                <h2 class="titulo">RALTH QUADRA EXTERNA</h2>
-                <p>
-                    <span class="textos"> A Escola de Esportes RALTH está localizada na <a
-                            href="https://maps.app.goo.gl/FTj8cRvyvtFiwtCq5" target="_blank">Rua Industrial, 153 - Stª Maria (B.
-                            Amazonas), Contagem. Quadra ARTEBOLL</a></span>
-                    <br><br>
-                    <span class="subtitulo">Ofertamos: </span>
-                    <br>
-                    ⚽ Futsal: 03 a 17 anos
-                    <br>
-                    🏐 Vôlei: 09 a 17 anos e Adultos
-                    
-                    <br>
-                    <hr>
-                </p>
-            </section>
-
-            <section>
-                <div id="items_ralth">
-                    <div id="item_1" class="item-ralth futsal"></div>
-                    <div id="item_2" class="item-ralth volei"></div>
-                    <div id="item_3" class="item-ralth lanchonete"></div>
+        <main class="conteudo-ralth">
+            <section class="ralth-apresentacao" aria-labelledby="titulo-unidade">
+                <div class="ralth-apresentacao-conteudo">
+                    <span class="ralth-etiqueta"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Nossa
+                        unidade</span>
+                    <h1 id="titulo-unidade">Ralth Quadra Externa</h1>
+                    <p>Esporte, aprendizado e diversão para toda a família na Quadra Arteboll.</p>
+                    <a class="ralth-endereco" href="https://maps.app.goo.gl/FTj8cRvyvtFiwtCq5" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                        <span>Rua Industrial, 153 — Santa Maria (B. Amazonas), Contagem</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="ralth-modalidades" aria-label="Modalidades disponíveis">
+                    <div class="ralth-modalidade">
+                        <i class="fa-solid fa-futbol" aria-hidden="true"></i>
+                        <span><strong>Futsal</strong>03 a 17 anos</span>
+                    </div>
+                    <div class="ralth-modalidade">
+                        <i class="fa-solid fa-volleyball" aria-hidden="true"></i>
+                        <span><strong>Vôlei</strong>09 a 17 anos e adultos</span>
+                    </div>
                 </div>
             </section>
 
-            <section>
+            <section class="ralth-experiencias" aria-labelledby="titulo-experiencias">
+                <div class="ralth-secao-cabecalho">
+                    <h2 id="titulo-experiencias">O que você procura?</h2>
+                    <p>Selecione uma opção para ver horários, turmas e mais informações.</p>
+                </div>
 
+                <div id="items_ralth" aria-label="Informações da unidade">
+                    <button type="button" id="item_1" class="item-ralth futsal" aria-controls="info_escola"
+                        aria-expanded="false">
+                        <span class="item-ralth-conteudo">
+                            <span class="item-ralth-titulo">Aulas de Futsal</span>
+                            <span class="item-ralth-descricao">Turmas para crianças e adolescentes</span>
+                            <span class="item-ralth-acao">Ver turmas e horários <i class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <button type="button" id="item_2" class="item-ralth volei" aria-controls="info_escola"
+                        aria-expanded="false">
+                        <span class="item-ralth-conteudo">
+                            <span class="item-ralth-titulo">Aulas de Vôlei</span>
+                            <span class="item-ralth-descricao">Opções para jovens e adultos</span>
+                            <span class="item-ralth-acao">Ver turmas e horários <i class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <button type="button" id="item_3" class="item-ralth lanchonete" aria-controls="info_escola"
+                        aria-expanded="false">
+                        <span class="item-ralth-conteudo">
+                            <span class="item-ralth-titulo">Lanchonete</span>
+                            <span class="item-ralth-descricao">Conheça as opções para aproveitar por lá</span>
+                            <span class="item-ralth-acao">Conhecer a lanchonete <i class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                </div>
+
+                <div id="info_escola" class="info-escola" aria-live="polite" aria-atomic="true" hidden></div>
             </section>
-
-        </section>
+        </main>
 
         <footer id="rodape">
 
@@ -141,7 +172,7 @@
 
     </div>
 
-    <script src="js/ralth.js"></script>
+    <script src="/js/ralth.js"></script>
 
 </body>
 
