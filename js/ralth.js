@@ -40,55 +40,85 @@ document.addEventListener("DOMContentLoaded", () => {
     // ============================================================
     const informacoes = {
         item_1: {
-            titulo: "⚽ FUTSAL",
-            subtitulo: "Turmas Noite - 2ª e 4ª feiras",
-            item_lista_1: "18h30 às 19h30 SUB 07 e 09 (06 e 09 anos)",
-            item_lista_2: "19h30 às 20h30 SUB 11 e 13 (10 e 13 anos)",
-            item_lista_3: "20h30 às 21h30 SUB 15 e 17 (14 e 17 anos)",
-
-            subtitulo2: "Turmas Tarde - 2ª e 4ª feiras",
-            item_lista_4: "14h00 às 15h00 - SUB 11/13 (10 à 13 anos)",
-            item_lista_5: "15h00 às 16h00 - SUB 07/09 (06 à 09 anos)",
-            item_lista_6: "16h00 às 16h50 - SUB 03/05 (03 à 05 anos)",
-
-            subtitulo3: "Turmas Manhã - 2ª e 4ª feiras",
-            item_lista_7: "08h30 às 09h30 - SUB 11/13 (10 à 13 anos)",
-            item_lista_8: "09h30 às 10h30 - SUB 07/09 (06 à 09 anos)",
-            item_lista_9: "10h30 às 11h20 - SUB 03/05 (03 à 05 anos)",
-
-            informacao1: "Personal soccer: Agende seu horário",
-            informacao2: "MAIORES INFORMAÇÕES - 31 98813-7766",
-            informacao3: "Entre em contato e saiba mais sobre",
-            informacao3_5: "valores, eventos, concursos e torneios!",
-            informacao4: "MATRÍCULAS - 31 98288-7389",
-            informacao5: "Garanta sua vaga!"
+            titulo: "FUTSAL",
+            turmas: [
+                {
+                    titulo: "Turmas 01 - Manhã - 2ª e 6ª feiras",
+                    horarios: [
+                        "08h30 às 09h30 - Nível Iniciação",
+                        "4ª feiras: 09h às 10h00"
+                    ]
+                },
+                {
+                    titulo: "Turma 02 - Tarde - 2ª e 4ª feiras",
+                    horarios: ["17h40 às 18h30 - Nível Iniciação"]
+                },
+                {
+                    titulo: "Turma 03 - Noite - 2ª e 4ª feiras",
+                    horarios: ["18h30 às 19h30 - Nível Intermediário"]
+                },
+                {
+                    titulo: "Turma 04 - Noite - 2ª, 4ª e 6ª feiras",
+                    horarios: ["19h30 às 20h30 - Nível Avançado"]
+                },
+                {
+                    titulo: "Turma 05 - Noite",
+                    horarios: [
+                        "5ª feira: 19h00 às 20h00",
+                        "6ª feiras: 18h30 às 19h30"
+                    ]
+                },
+                {
+                    titulo: "Turma 06 - Tarde",
+                    horarios: ["6ª feiras: 17h40 às 18h30 - Infantil"]
+                }
+            ],
+            informacoes: [
+                "Personal soccer: Agende seu horário",
+                "MAIORES INFORMAÇÕES - 31 98813-7766",
+                "Entre em contato e saiba mais sobre valores, eventos, concursos e torneios!",
+                "MATRÍCULAS - 31 98288-7389",
+                "Garanta sua vaga!"
+            ]
         },
 
         item_2: {
-            titulo: "🏐 VÔLEI",
-            subtitulo: "Turmas Noite - 3ª e 6ª feiras",
-            item_lista_1: "18h10 às 19h00 - SUB 10/14 (09 e 14 anos)",
-
-            subtitulo2: "Turmas Noite Adulto - 6ª feiras",
-            item_lista_2: "19h00 às 20h00* - SUB 17 / Adultos",
-
-            subtitulo3: "Turmas Tarde - 3ª e 6ª feiras",
-            item_lista_3: "14h00 às 15h00 - SUB 10/11 (09 e 11 anos)",
-            item_lista_4: "15h00 às 16h00 - SUB 12/15 (12 e 15 anos)",
-
-            subtitulo4: "Turmas Manhã - 3ª e 6ª feiras",
-            item_lista_5: "09h00 às 10h00 - SUB 12/15 (12 e 15 anos)",
-            item_lista_6: "10h00 às 11h00 - SUB 10/11 (09 e 11 anos)",
-
-            informacao1: "MAIORES INFORMAÇÕES - 31 98813-7766",
-            informacao2: "Saiba mais sobre valores, eventos e torneios!",
-            informacao3: "MATRÍCULAS - 31 98288-7389",
-            informacao4: "Garanta sua vaga!"
+            titulo: "VÔLEI",
+            turmas: [
+                {
+                    titulo: "Turmas Noite - 3ª e 6ª feiras",
+                    horarios: ["18h10 às 19h00 - SUB 10/14 (09 e 14 anos)"]
+                },
+                {
+                    titulo: "Turmas Noite Adulto - 6ª feiras",
+                    horarios: ["19h00 às 20h00* - SUB 17 / Adultos"]
+                },
+                {
+                    titulo: "Turmas Tarde - 3ª e 6ª feiras",
+                    horarios: [
+                        "14h00 às 15h00 - SUB 10/11 (09 e 11 anos)",
+                        "15h00 às 16h00 - SUB 12/15 (12 e 15 anos)"
+                    ]
+                },
+                {
+                    titulo: "Turmas Manhã - 3ª e 6ª feiras",
+                    horarios: [
+                        "09h00 às 10h00 - SUB 12/15 (12 e 15 anos)",
+                        "10h00 às 11h00 - SUB 10/11 (09 e 11 anos)"
+                    ]
+                }
+            ],
+            informacoes: [
+                "MAIORES INFORMAÇÕES - 31 98813-7766",
+                "Saiba mais sobre valores, eventos e torneios!",
+                "MATRÍCULAS - 31 98288-7389",
+                "Garanta sua vaga!"
+            ]
         },
 
         item_3: {
-            titulo: "🍔 LANCHONETE PRINELOPE",
-            subtitulo: "Venha conhecer nosso espaço com lanches maravilhosos.",
+            titulo: "Lanchonete",
+            subtitulo: "Uma pausa gostosa para recarregar as energias entre uma partida e outra.",
             item_lista_1: "Açaí",
             item_lista_2: "Salgados",
             item_lista_3: "Sucos",
@@ -96,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
             item_lista_5: "Refrigerantes",
             item_lista_6: "E muito mais!",
             informacao1: "Consulte horários de funcionamento e preços.",
-            imagem: "img/img_acai.jpeg"
+            imagem: "/img/img_acai.jpeg"
         }
     };
 
@@ -108,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         infoSection = document.createElement("div");
         infoSection.id = "info_escola";
         infoSection.className = "info-escola";
-        infoSection.style.display = "none";
+        infoSection.hidden = true;
 
         if (items_ralth) {
             items_ralth.parentNode.insertBefore(infoSection, items_ralth.nextSibling);
@@ -129,145 +159,93 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    const fecharInformacoes = () => {
+        infoSection.hidden = true;
+        itens.forEach(item => {
+            item.setAttribute("aria-expanded", "false");
+            item.classList.remove("selecionado");
+        });
+    };
+
     // ============================================================
     // EVENTO DE CLICK PARA ITENS
     // ============================================================
     itens.forEach(item => {
         item.addEventListener("click", () => {
             const dados = informacoes[item.id];
+            if (!dados) {
+                console.warn(`Nenhuma informação cadastrada para ${item.id}.`);
+                return;
+            }
+
+            itens.forEach(outroItem => {
+                const selecionado = outroItem === item;
+                outroItem.setAttribute("aria-expanded", String(selecionado));
+                outroItem.classList.toggle("selecionado", selecionado);
+            });
+
             let html = "";
 
             if (item.id === "item_3") {
-                // ==========================
-                // LANCHONETE CENTRALIZADA
-                // ==========================
                 html = `
-<div class="info-conteudo centralizado">
-    <h2 class="titulo2">${dados.titulo}</h2>
-    <p>${dados.subtitulo || ''}</p>
-
-    <div class="info-imagem" style="background-image: url(${dados.imagem});"></div>
-
-    <ul>
-        ${dados.item_lista_1 ? `<li>${dados.item_lista_1}</li>` : ''}
-        ${dados.item_lista_2 ? `<li>${dados.item_lista_3}</li>` : ''}
-        ${dados.item_lista_3 ? `<li>${dados.item_lista_2}</li>` : ''}
-        ${dados.item_lista_4 ? `<li>${dados.item_lista_4}</li>` : ''}
-        ${dados.item_lista_5 ? `<li>${dados.item_lista_5}</li>` : ''}
-        ${dados.item_lista_6 ? `<li>${dados.item_lista_6}</li>` : ''}
-    </ul>
-
-    <p>${dados.informacao1 || ''}</p>
+<div class="info-conteudo lanchonete-conteudo">
+    <div class="lanchonete-texto">
+        <span class="lanchonete-sobretitulo"><i class="fa-solid fa-store" aria-hidden="true"></i> Um intervalo com sabor</span>
+        <h2>${dados.titulo}</h2>
+        <p class="lanchonete-descricao">${dados.subtitulo || ''}</p>
+        <h3>Opções para aproveitar</h3>
+        <ul class="lanchonete-opcoes">
+            ${Object.keys(dados)
+                .filter(chave => /^item_lista_\d+$/.test(chave))
+                .sort((a, b) => Number(a.slice(11)) - Number(b.slice(11)))
+                .map(chave => `<li><i class="fa-solid fa-check" aria-hidden="true"></i>${dados[chave]}</li>`)
+                .join("")}
+        </ul>
+        <p class="lanchonete-aviso"><i class="fa-regular fa-clock" aria-hidden="true"></i>${dados.informacao1 || ''}</p>
+    </div>
+    <img class="lanchonete-imagem" src="${dados.imagem}" alt="Tigela de açaí com banana e granola">
 </div>
                 `;
             } else {
-
-                if (item.id === "item_2") {
-
-                    html = `
+                html = `
 <div class="info-conteudo">
-    <div class="info-texto">
-
-        <h2 class="titulo">${dados.titulo}</h2>
-
-        <!-- BLOCO 1 -->
-        <div class="info-bloco">
-            <h3>${dados.subtitulo || ""}</h3>
-            <p>${dados.item_lista_1 || ""}</p>
+    <div class="ralth-info-texto">
+        <h2>${dados.titulo}</h2>
+        <div class="ralth-turmas-grid">
+            ${dados.turmas.map(turma => `
+                <section class="info-bloco">
+                    <h3>${turma.titulo}</h3>
+                    ${turma.horarios.map(horario => `<p>${horario}</p>`).join("")}
+                </section>
+            `).join("")}
         </div>
-
-        <!-- BLOCO 2 -->
-        <div class="info-bloco">
-            <h3>${dados.subtitulo2 || ""}</h3>
-            <p>${dados.item_lista_2 || ""}</p>
-        </div>
-
-        <!-- BLOCO 3 -->
-        <div class="info-bloco">
-            <h3>${dados.subtitulo3 || ""}</h3>
-            <p>${dados.item_lista_3 || ""}</p>
-            <p>${dados.item_lista_4 || ""}</p>
-        </div>
-
-        <!-- BLOCO 4 -->
-        <div class="info-bloco">
-            <h3>${dados.subtitulo4 || ""}</h3>
-            <p>${dados.item_lista_5 || ""}</p>
-            <p>${dados.item_lista_6 || ""}</p>
-        </div>
-
-        <!-- BLOCO 5 -->
-        <div class="info-bloco">
-            <p id="span-negrito">${dados.informacao1 || ''}</p>
-            <p>${dados.informacao2 || ''}</p>
-            <p>${dados.informacao3 || ''}</p>
-            <p>${dados.informacao4 || ''}</p>
-        </div>
-
+        ${dados.informacoes.length ? `
+            <div class="info-bloco">
+                ${dados.informacoes.map((informacao, indice) =>
+                    `<p${indice === 0 ? ' id="span-negrito"' : ''}>${informacao}</p>`
+                ).join("")}
+            </div>
+        ` : ""}
     </div>
+    <div class="info-imagem-ralth" role="img" aria-label="${dados.titulo}"
+        style="background-image: url('/img/img-ralth-futsal.jpeg')"></div>
 </div>
-                    `;
-
-                } else {
-
-                    // FUTSAL
-                    html = `
-<div class="info-conteudo">
-    <div class="info-texto">
-
-        <h2 class="titulo">${dados.titulo}</h2>
-
-        <!-- BLOCO 1 -->
-        <div class="info-bloco">
-            <h3>${dados.subtitulo || ""}</h3>
-            <p>${dados.item_lista_1 || ""}</p>
-            <p>${dados.item_lista_2 || ""}</p>
-            <p>${dados.item_lista_3 || ""}</p>
-        </div>
-
-        <!-- BLOCO 2 -->
-        <div class="info-bloco">
-            <h3>${dados.subtitulo2 || ""}</h3>
-            <p>${dados.item_lista_4 || ""}</p>
-            <p>${dados.item_lista_5 || ""}</p>
-            <p>${dados.item_lista_6 || ""}</p>
-        </div>
-
-        <!-- BLOCO 3 -->
-        <div class="info-bloco">
-            <h3>${dados.subtitulo3 || ""}</h3>
-            <p>${dados.item_lista_7 || ""}</p>
-            <p>${dados.item_lista_8 || ""}</p>
-            <p>${dados.item_lista_9 || ""}</p>
-        </div>
-
-        <!-- BLOCO 5 -->
-        <div class="info-bloco">
-            <p id="span-negrito">${dados.informacao1 || ''}</p>
-            <p>${dados.informacao2 || ''}</p>
-            <p>${dados.informacao3 || ''}</p>
-            <p>${dados.informacao3_5 || ''}</p>
-            <p>${dados.informacao4 || ''}</p>
-            <p>${dados.informacao5 || ''}</p>
-        </div>
-
-    </div>
-    <div class="info-imagem-ralth" style="background-image: url(img/img-ralth-futsal.jpeg)">
-    </div>
-</div>
-                    `;
-                }
+                `;
             }
 
             infoSection.innerHTML = html;
-            infoSection.style.display = "block";
+            infoSection.hidden = false;
+
+            const botaoFechar = document.createElement("button");
+            botaoFechar.type = "button";
+            botaoFechar.className = "fechar-info";
+            botaoFechar.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i> Fechar informações';
+            botaoFechar.addEventListener("click", fecharInformacoes);
+            infoSection.querySelector(".info-conteudo").appendChild(botaoFechar);
 
             const bloco = infoSection.querySelector(".info-conteudo");
             setTimeout(() => bloco.classList.add("ativo"), 20);
-
-            if (window.innerWidth <= 1068) {
-                infoSection.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
+            infoSection.scrollIntoView({ behavior: "smooth", block: "start" });
         });
     });
 

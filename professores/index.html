@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/" target="_self">
+    <title translate="no">Ralth Esportes - Professores</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="img/escudo_ralth_site.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        .professores-main {
+            width: min(1120px, calc(100% - 40px));
+            margin: clamp(36px, 6vw, 72px) auto;
+        }
+
+        .boas-vindas-professores {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            min-height: 250px;
+            align-items: center;
+            padding: clamp(30px, 6vw, 64px);
+            border-radius: 20px;
+            background: linear-gradient(115deg, var(--cor-primaria-escura), var(--cor-primaria));
+            box-shadow: 0 18px 40px rgba(9, 39, 61, 0.2);
+            color: var(--cor-branca);
+        }
+
+        .boas-vindas-professores::after {
+            position: absolute;
+            top: -110px;
+            right: -45px;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 50%;
+            box-shadow: 0 0 0 35px rgba(255, 255, 255, 0.04), 0 0 0 75px rgba(255, 255, 255, 0.035);
+            content: "";
+        }
+
+        .boas-vindas-conteudo {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+        }
+
+        .boas-vindas-etiqueta {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 18px;
+            color: #b8dcf5;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .boas-vindas-professores h1 {
+            margin: 0;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.15;
+        }
+
+        .boas-vindas-professores p {
+            max-width: 550px;
+            margin: 18px 0 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            line-height: 1.7;
+        }
+
+        .titulo-acessos {
+            margin: clamp(40px, 6vw, 64px) 0 22px;
+            color: var(--cor-primaria-escura);
+            font-size: clamp(1.35rem, 3vw, 1.8rem);
+        }
+
+        .opcoes-professores {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .opcao-professor {
+            display: flex;
+            min-height: 230px;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: clamp(24px, 4vw, 36px);
+            border: 1px solid #e4edf3;
+            border-radius: 16px;
+            background: var(--cor-branca);
+            box-shadow: 0 8px 24px rgba(9, 39, 61, 0.08);
+            color: var(--cor-primaria-escura);
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .opcao-professor:hover {
+            transform: translateY(-5px);
+            border-color: #b8d3e5;
+            box-shadow: 0 16px 32px rgba(9, 39, 61, 0.14);
+        }
+
+        .icone-opcao-professor {
+            display: grid;
+            width: 54px;
+            height: 54px;
+            place-items: center;
+            margin-bottom: 22px;
+            border-radius: 14px;
+            background: #eaf3f9;
+            color: var(--cor-primaria);
+            font-size: 1.35rem;
+        }
+
+        .opcao-professor h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .opcao-professor p {
+            margin: 10px 0 24px;
+            color: #5c6b76;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .acessar-opcao {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: auto;
+            color: var(--cor-primaria);
+            font-size: 0.92rem;
+            font-weight: bold;
+        }
+
+        .opcao-professor:focus-visible {
+            outline: 3px solid #71b9e8;
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 640px) {
+            .professores-main {
+                width: min(100% - 28px, 480px);
+            }
+
+            .boas-vindas-professores {
+                min-height: 220px;
+                border-radius: 16px;
+            }
+
+            .boas-vindas-professores::after {
+                right: -240px;
+            }
+
+            .opcoes-professores {
+                grid-template-columns: 1fr;
+            }
+
+            .opcao-professor {
+                min-height: 210px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main_div">
+        <div id="opcoes">
+            <div id="menu" class="opc"></div>
+            <div id="header-container">
+                <div id="menu_opcoes_1" class="menu-lado">
+                    <a href="./">Home</a>
+                    <a href="ralth_externa/">Ralth Externa</a>
+                    <a href="futsal/">Futsal</a>
+                </div>
+
+                <div id="logo"></div>
+
+                <div id="menu_opcoes_2" class="menu-lado">
+                    <a href="volei/">Vôlei</a>
+                    <a href="eventos/">Eventos</a>
+                    <a style="border-bottom: solid white;" href="professores/">Professores</a>
+                </div>
+            </div>
+        </div>
+
+        <main class="professores-main">
+            <section class="boas-vindas-professores" aria-labelledby="titulo-boas-vindas">
+                <div class="boas-vindas-conteudo">
+                    <span class="boas-vindas-etiqueta"><i class="fa-solid fa-person-chalkboard"
+                            aria-hidden="true"></i> Área do professor</span>
+                    <h1 id="titulo-boas-vindas">Olá, professor!<br>O que deseja acessar hoje?</h1>
+                    <p>Encontre em um só lugar as ferramentas da Ralth para planejar suas aulas e acompanhar o seu
+                        trabalho.</p>
+                </div>
+            </section>
+
+            <h2 class="titulo-acessos">Acessos rápidos</h2>
+            <div class="opcoes-professores">
+                <a class="opcao-professor" href="https://app.planejadordetreino.com/login" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="icone-opcao-professor"><i class="fa-solid fa-clipboard-list"
+                            aria-hidden="true"></i></span>
+                    <h3>Planejador de treino</h3>
+                    <p>Organize seus treinos e prepare suas atividades com praticidade.</p>
+                    <span class="acessar-opcao">Acessar planejador <i class="fa-solid fa-arrow-right"
+                            aria-hidden="true"></i></span>
+                </a>
+                <a class="opcao-professor" href="https://plataforma.ralth.com.br/" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="icone-opcao-professor"><i class="fa-solid fa-futbol"
+                            aria-hidden="true"></i></span>
+                    <h3>Plataforma Ralth</h3>
+                    <p>Acesse a plataforma da Ralth Esportes.</p>
+                    <span class="acessar-opcao">Acessar plataforma <i class="fa-solid fa-arrow-right"
+                            aria-hidden="true"></i></span>
+                </a>
+            </div>
+        </main>
+
+        <footer id="rodape">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h2 class="footer-title">Ralth Esportes</h2>
+                    <div class="footer-text">Na RALTH dá Jogo</div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-subtitle">Contato</h3>
+                    <div class="footer-contact">
+                        <a href="mailto:ralth.escolasdefutsal@gmail.com" class="contact-item">
+                            <div class="contato-icone"><i class="fa-solid fa-envelope"></i></div>
+                            <span class="contact-label">ralth.escolasdefutsal@gmail.com</span>
+                        </a>
+                        <a href="https://wa.me/c/553188137766" class="contact-item">
+                            <div class="contato-icone"><i class="fa-solid fa-phone"></i></div>
+                            <span class="contact-label">+55 (31) 988137766</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-subtitle">Redes Sociais</h3>
+                    <div class="footer-socials">
+                        <a class="link_rs" href="https://wa.me/c/553188137766" target="_blank"
+                            rel="noopener noreferrer" aria-label="WhatsApp">
+                            <div class="icone-social" id="wzp"></div>
+                        </a>
+                        <a class="link_rs" href="https://www.instagram.com/ralth.esportes/" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram">
+                            <div class="icone-social" id="insta"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

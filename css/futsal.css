@@ -1,85 +1,262 @@
-/* ================================
-   GRID DAS ESCOLAS
-================================ */
-#escolas {
-    overflow: hidden;
-    margin-top: 2vh;
-    margin-bottom: 4%;
-    display: flex;
-    justify-content: center;
+.futsal-page {
+    --modalidade-cor: #1f547c;
+    --modalidade-cor-escura: #09273d;
+    --modalidade-destaque: #a7d9f7;
+}
+
+.modalidade-page {
+    width: min(1120px, calc(100% - 40px));
+    margin: clamp(36px, 6vw, 72px) auto;
+}
+
+.modalidade-apresentacao {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(230px, 0.8fr);
     align-items: center;
+    gap: 36px;
+    overflow: hidden;
+    padding: clamp(30px, 6vw, 62px);
+    border-radius: 22px;
+    background:
+        radial-gradient(ellipse at 100% 0%, rgba(87, 164, 211, 0.3), transparent 38%),
+        linear-gradient(120deg, var(--modalidade-cor-escura), var(--modalidade-cor) 76%, #2c6b96);
+    box-shadow: 0 18px 40px rgba(9, 39, 61, 0.2);
+    color: #fff;
+}
+
+.modalidade-apresentacao::after {
+    position: absolute;
+    right: 18%;
+    bottom: -220px;
+    width: 330px;
+    height: 330px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 34px rgba(255, 255, 255, 0.035), 0 0 0 72px rgba(255, 255, 255, 0.025);
+    content: "";
+    pointer-events: none;
+}
+
+.modalidade-apresentacao-conteudo,
+.modalidade-destaque {
+    position: relative;
+    z-index: 1;
+}
+
+.modalidade-etiqueta,
+.escolas-sobretitulo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--modalidade-destaque);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.modalidade-apresentacao h1 {
+    margin: 18px 0 12px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+}
+
+.modalidade-apresentacao-conteudo > p {
+    max-width: 560px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.7;
+}
+
+.modalidade-destaque {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+}
+
+.modalidade-destaque > i {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.modalidade-destaque span {
+    display: grid;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.modalidade-destaque strong {
+    color: #fff;
+    font-size: 1.05rem;
+}
+
+.escolas-section {
+    margin-top: clamp(42px, 6vw, 68px);
+}
+
+.escolas-cabecalho {
+    margin-bottom: 24px;
+}
+
+.escolas-sobretitulo {
+    color: #3979a4;
+    font-size: 0.75rem;
+}
+
+.escolas-cabecalho h2 {
+    margin: 10px 0 8px;
+    color: #09273d;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.escolas-cabecalho p {
+    margin: 0;
+    color: #5c6b76;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+#escolas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    overflow: visible;
     width: 100%;
+    margin: 0;
 }
 
-.iten-escola-wrapper {
-    width: 11vw;
-    height: 10vh;
-    display: inline-block;    /* mantém tamanho fixo */
-    overflow: hidden;         /* evita que o hover empurre outros elementos */
-}
-
-/* ================================
-   IMAGENS DAS ESCOLAS
-================================ */
-#item_1 { background-image: url("../img/CCV FUTSAL.png"); background-size: 100%; background-repeat: no-repeat; background-position: center; }
-#item_2 { background-image: url("../img/SUPREMO FUTSAL.png"); background-size: 100%; background-repeat: no-repeat; background-position: center; }
-#item_3 { background-image: url("../img/KALIL FUTSAL.png"); background-size: 100%; background-repeat: no-repeat; background-position: center; }
-#item_4 { background-image: url("../img/CONSTRUIR FUTSAL.png"); background-size: 100%; background-repeat: no-repeat; background-position: center; }
-#item_5 { background-image: url("../img/CRESCER ESPORTES.png"); background-size: 100%; background-repeat: no-repeat; background-position: center; }
-#item_6 { background-image: url("../img/IHF FUTSAL.png"); background-size: 100%; background-repeat: no-repeat; background-position: center; }
-
-/* ================================
-   ÁREA DE INFORMAÇÕES
-================================ */
-#info_escola {
-    width: 31%;
-    padding: 10px;
-    margin-left: 17%;
-    font-family: "Montserrat", sans-serif;
-    color: rgb(31, 84, 124);
-}
-
-.info-texto div {
-    text-align: justify !important;
-    text-indent: 0 !important;
-}
-
-.info-texto h2 {
-    text-align: left;
-}
-
-/* ================================
-   MINI CARDS DAS ESCOLAS
-================================ */
 .iten_escola {
-    width: 16vw;
-    height: 25vh;
-    text-align: center;
-    padding: 40px;
-    margin: 0.9%;
-    border-radius: 5px;
+    display: flex;
+    min-width: 0;
+    min-height: 320px;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 18px;
+    border: 1px solid #e4edf3;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(9, 39, 61, 0.08);
+    color: #09273d;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform-origin: center center; /* garante que cresça para dentro/fora do centro */
+    font: inherit;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .iten_escola:hover {
-    transform: scale(1.05);
-
+    transform: translateY(-5px);
+    border-color: #b8d3e5;
+    box-shadow: 0 16px 32px rgba(9, 39, 61, 0.14);
 }
 
-/* ================================
-   BLOCO COM TEXTO + IMAGEM
-================================ */
+.iten_escola[aria-expanded="true"] {
+    border-color: #5896bd;
+    box-shadow: 0 0 0 2px rgba(88, 150, 189, 0.18), 0 12px 28px rgba(9, 39, 61, 0.1);
+}
+
+.iten_escola:focus-visible,
+.fechar-info:focus-visible {
+    outline: 3px solid #71b9e8;
+    outline-offset: 4px;
+}
+
+.escola-card-logo {
+    display: block;
+    width: 100%;
+    min-height: 205px;
+    flex: 1 1 auto;
+    border-radius: 10px;
+    background-color: #f5f8fa;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#item_2 .escola-card-logo {
+    background-image: url("../img/logo_supremo.png");
+}
+
+#item_3 .escola-card-logo {
+    background-image: url("../img/KALIL FUTSAL.png");
+}
+
+#item_4 .escola-card-logo {
+    background-image: url("../img/CONSTRUIR FUTSAL.png");
+}
+
+#item_5 .escola-card-logo {
+    background-image: url("../img/CRESCER ESPORTES.png");
+}
+
+#item_6 .escola-card-logo {
+    background-image: url("../img/IHF FUTSAL.png");
+}
+
+.escola-card-info {
+    display: grid;
+    width: 100%;
+    gap: 10px;
+    padding: 20px 5px 4px;
+}
+
+.escola-card-nome {
+    color: #09273d;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.escola-card-acao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--modalidade-cor);
+    font-size: 0.87rem;
+    font-weight: bold;
+}
+
+.escola-card-acao i {
+    transition: transform 0.2s ease;
+}
+
+.iten_escola:hover .escola-card-acao i {
+    transform: translateX(4px);
+}
+
+.info-escola:not([hidden]) {
+    margin-top: 28px;
+    scroll-margin-top: 24px;
+}
+
 .info-conteudo {
-    display: flex;
-    justify-content: center;
-    gap: 10%;
-    width: 70vw;
-    margin-left: -15%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+    align-items: start;
+    gap: 28px;
+    padding: clamp(24px, 4vw, 42px);
+    border: 1px solid #e4edf3;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 12px 34px rgba(9, 39, 61, 0.09);
+    color: #25465e;
     opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity .6s ease, transform .6s ease;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .info-conteudo.ativo {
@@ -87,111 +264,168 @@
     transform: translateY(0);
 }
 
-.info-conteudo > div {
-    width: 80vw;
-    height: 85vh; /* Altura desktop restaurada */
+.info-texto {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-texto h2 {
+    margin: 0;
+    color: #0d3a58;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    line-height: 1.25;
+    text-align: left;
+}
+
+.info-texto p {
+    margin: 0;
+    color: #4d606e;
+    font-size: 0.96rem;
+    line-height: 1.75;
+    white-space: pre-line;
+}
+
+.info-horarios h3 {
+    margin: 0 0 16px;
+    color: #0d3a58;
+    font-size: 1.15rem;
+}
+
+.grade-horarios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.bloco-horario {
+    padding: 17px;
+    border: 1px solid #e4edf3;
+    border-radius: 12px;
+    background: #f4f8fb;
+}
+
+.bloco-horario h4 {
+    margin: 0 0 9px;
+    color: var(--modalidade-cor);
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+.bloco-horario p {
+    margin: 0;
+    color: #4d606e;
+    font-size: 0.88rem;
+    line-height: 1.6;
 }
 
 .info-imagem {
-    border: 2px solid rgb(31, 84, 124);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     width: 100%;
-    height: 100%; /* Garante que ocupe a altura do pai */
+    min-height: 300px;
+    border: 1px solid #e4edf3;
+    border-radius: 14px;
+    background-color: #f4f8fb;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-.info-texto {
-    z-index: 2;
+.fechar-info {
+    grid-column: 1 / -1;
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid #d9e5ed;
+    border-radius: 8px;
+    background: #fff;
+    color: #365970;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: bold;
 }
 
-p {
-    color: rgb(31, 84, 124) !important;
-    font-weight: normal !important;
+.fechar-info:hover {
+    background: #f2f7fa;
 }
 
-/* ================================
-   MOBILE
-================================ */
-@media (max-width: 768px) {
-    html, body { overflow-x: hidden; }
+#rodape {
+    margin-top: 0;
+}
+
+@media (max-width: 900px) {
+    #escolas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .modalidade-apresentacao {
+        grid-template-columns: 1fr;
+    }
+
+    .modalidade-destaque {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 650px) {
+    .modalidade-page {
+        width: min(100% - 28px, 480px);
+        margin: 32px auto 44px;
+    }
+
+    .modalidade-apresentacao {
+        gap: 24px;
+        padding: 28px 22px;
+        border-radius: 17px;
+    }
+
+    .modalidade-apresentacao::after {
+        right: -230px;
+        bottom: -210px;
+    }
+
+    .escolas-section {
+        margin-top: 40px;
+    }
 
     #escolas {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 5vh;
+        grid-template-columns: 1fr;
+        gap: 14px;
     }
 
     .iten_escola {
-        width: 85vw;
-        height: 24vh;
-        margin: 10px auto;
-        padding: 0;
+        min-height: 280px;
+        padding: 15px;
     }
 
-    #info_escola {
-        width: 90%;
-        margin: 10px auto;
-        font-size: 0.9rem;
+    .escola-card-logo {
+        min-height: 190px;
     }
 
     .info-conteudo {
-        flex-direction: column;
-        gap: 15px;
-        width: 94%;
-        margin: 0;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 14px;
     }
 
-    .info-conteudo > div {
-        width: 100%;
-        height: auto; /* Altura adaptável no mobile */
+    .grade-horarios {
+        grid-template-columns: 1fr;
     }
 
     .info-imagem {
-    border: 2px solid rgb(31, 84, 124);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;       /* cover mantém enquadramento visual */
-    width: 100%;
-    /* garante altura visível mesmo que o pai não defina altura */
-    min-height: 200px;
-    margin-left: 4%;
-    /* alternativa moderna que preserva proporção */
-    aspect-ratio: 4 / 3;
-    display: block;
-    box-sizing: border-box;
-    background-color: #eef6fb;    /* cor suave enquanto imagem não carrega */
-    overflow: hidden;
+        min-height: 240px;
+        grid-row: 2;
+    }
 }
 
-    .info-texto { text-align: justify; }
-}
-
-/* Telas estreitas e altas (S8+) */
-@media screen and (max-width: 420px) and (min-height: 740px) {
-    .iten_escola { height: 24vh; }
-.info-imagem {
-    border: 2px solid rgb(31, 84, 124);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;       /* cover mantém enquadramento visual */
-    width: 100%;
-    /* garante altura visível mesmo que o pai não defina altura */
-    min-height: 200px;
-    margin-left: 4%;
-    /* alternativa moderna que preserva proporção */
-    aspect-ratio: 4 / 3;
-    display: block;
-    box-sizing: border-box;
-    background-color: #eef6fb;    /* cor suave enquanto imagem não carrega */
-    overflow: hidden;
-}
-    .info-conteudo > div { height: auto !important; }
-}
-
-footer {
-    margin-top: 6.2%;
+@media (prefers-reduced-motion: reduce) {
+    .iten_escola,
+    .escola-card-acao i,
+    .info-conteudo {
+        transition-duration: 0.01ms;
+    }
 }

@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper(".carrossel", {
-      loop: true,
-      autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-      },
-      navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-      },
-      grabCursor: true,
-  });
+  if (document.querySelector(".carrossel")) {
+    new Swiper(".carrossel", {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        grabCursor: true,
+    });
+  }
 
   const menu = document.getElementById("menu");
   const opcoes1 = document.getElementById("menu_opcoes_1");

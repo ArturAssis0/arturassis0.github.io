@@ -219,24 +219,77 @@ body.menu-aberto {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    justify-content: center;
+    padding: 35px 20px;
     background: var(--gradiente-header);
+    gap: 10px;
 }
 
 .conteudo-saudacao h1 {
-    font-size: clamp(1.3rem, 4vw, 3rem);
+    font-size: clamp(1.5rem, 5vw, 3.2rem);
     color: var(--cor-branca);
     margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    text-align: center;
+    line-height: 1.2;
 }
 
 .conteudo-saudacao p {
-    font-size: clamp(0.9rem, 2vw, 1.5rem);
-    color: var(--cor-branca);
+    font-size: clamp(0.95rem, 2.5vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.95);
     margin: 0;
+    font-weight: 400;
+    text-align: center;
 }
 
 /* ============================================================
-   CONTEÚDO PRINCIPAL
+   SEÇÃO QUEM SOMOS
+   ============================================================ */
+.secao-quem-somos {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(31, 84, 124, 0.04) 0%, rgba(71, 179, 228, 0.06) 100%);
+    padding: 60px 20px;
+}
+
+.titulo-secao {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--cor-primaria-escura);
+    text-align: center;
+    margin: 0 0 40px 0;
+    letter-spacing: -0.5px;
+}
+
+.conteudo-quem-somos {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.paragrafo-principal,
+.paragrafo-secundario {
+    color: var(--cor-primaria);
+    text-align: justify;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.8;
+    font-weight: 400;
+    margin: 0;
+}
+
+.paragrafo-principal {
+    font-weight: 500;
+    color: var(--cor-primaria-escura);
+}
+
+.paragrafo-secundario {
+    font-weight: 400;
+}
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL (antigo)
    ============================================================ */
 #conteudo {
     width: 90%;
@@ -279,62 +332,102 @@ p {
    SEÇÃO DE VALORES
    ============================================================ */
 .titulo-valores {
-    color: var(--cor-primaria);
-    font-size: clamp(18px, 4vw, 30px);
+    color: var(--cor-primaria-escura);
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     text-align: center;
+    margin: 50px 0 30px 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .valores {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: start;
     width: 100%;
-    padding: 18px 10px;
-    margin: 16px 0;
+    max-width: 1100px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(31, 84, 124, 0.02) 0%, rgba(71, 179, 228, 0.04) 100%);
+    border-radius: 16px;
 }
 
 .valor {
-    width: 120px;
-    min-width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 8px;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(31, 84, 124, 0.08);
+}
+
+.valor:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(31, 84, 124, 0.2);
+    box-shadow: 0 8px 24px rgba(31, 84, 124, 0.12);
+    transform: translateY(-4px);
 }
 
 .icone {
-    width: 72px;
-    height: 72px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    background: var(--cor-primaria);
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-hover) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: var(--sombra);
-    transition: transform 0.12s ease, box-shadow 0.18s ease;
+    box-shadow: 0 8px 20px rgba(31, 84, 124, 0.25);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .icone svg {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     display: block;
     fill: var(--icone-cor);
 }
 
 .valor .titulo {
-    font-size: 0.86rem;
+    font-size: 1rem;
     font-weight: 700;
-    letter-spacing: 0.4px;
-    color: var(--cor-primaria);
-    padding: 0 4px;
+    letter-spacing: 0.6px;
+    color: var(--cor-primaria-escura);
+    padding: 0;
+    line-height: 1.4;
 }
 
 .valor:hover .icone {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+    transform: scale(1.08) rotateZ(2deg);
+    box-shadow: 0 12px 28px rgba(31, 84, 124, 0.35);
+}
+
+@media (max-width: 768px) {
+    .valores {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+        padding: 30px 16px;
+    }
+
+    .icone {
+        width: 75px;
+        height: 75px;
+    }
+
+    .icone svg {
+        width: 38px;
+        height: 38px;
+    }
+
+    .valor .titulo {
+        font-size: 0.9rem;
+    }
 }
 
 /* ============================================================
