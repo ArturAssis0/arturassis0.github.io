@@ -86,26 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
             titulo: "VÔLEI",
             turmas: [
                 {
-                    titulo: "Turmas Noite - 3ª e 6ª feiras",
-                    horarios: ["18h10 às 19h00 - SUB 10/14 (09 e 14 anos)"]
-                },
-                {
-                    titulo: "Turmas Noite Adulto - 6ª feiras",
-                    horarios: ["19h00 às 20h00* - SUB 17 / Adultos"]
-                },
-                {
-                    titulo: "Turmas Tarde - 3ª e 6ª feiras",
-                    horarios: [
-                        "14h00 às 15h00 - SUB 10/11 (09 e 11 anos)",
-                        "15h00 às 16h00 - SUB 12/15 (12 e 15 anos)"
-                    ]
-                },
-                {
-                    titulo: "Turmas Manhã - 3ª e 6ª feiras",
-                    horarios: [
-                        "09h00 às 10h00 - SUB 12/15 (12 e 15 anos)",
-                        "10h00 às 11h00 - SUB 10/11 (09 e 11 anos)"
-                    ]
+                    titulo: "Turma Noite - 3ª e 5ª feiras",
+                    horarios: ["18h20 às 19h10"]
                 }
             ],
             informacoes: [
